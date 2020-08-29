@@ -1,6 +1,6 @@
 <template>
-  <div class="text-center">
-    <h2>edit page</h2>
+  <div>
+    <h2 class="text-center">setting</h2>
   </div>
 </template>
 
@@ -9,3 +9,5 @@ export default {
   layout: 'project',
 }
 </script>
+
+<style lang="scss" scoped></style>
