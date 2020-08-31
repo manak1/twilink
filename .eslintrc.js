@@ -13,7 +13,7 @@ module.exports = {
     'plugin:prettier/recommended',
   ],
   // *.vue ファイルを lint にかけるために必要
-  plugins: ['vue'],
+  plugins: ['prettier'],
   // ここにカスタムルールを追加します。
   rules: {
     'vue/html-self-closing': 'off',
@@ -22,5 +22,7 @@ module.exports = {
     'no-console': 'off',
     'vue/max-attributes-per-line': 'off',
     'prettier/prettier': ['error', { semi: false }],
+    'vue/singleline-html-element-content-newline': 'off',
+    'vue/multiline-html-element-content-newline': 'off',
   },
 }

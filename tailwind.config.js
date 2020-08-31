@@ -11,7 +11,6 @@ module.exports = {
       addComponents({
         '.container': {
           maxWidth: '480px',
-          padding: '0 20px',
         },
       })
     },

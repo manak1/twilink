@@ -12,7 +12,7 @@
       >
         <nuxt-link
           class="block pb-1 py-2"
-          :to="link.path"
+          :to="pathCreate(index, link.path)"
           :class="activeClass(link.path)"
         >
           <font-awesome-icon :icon="link.icon" class="text-lg" />
@@ -65,6 +65,13 @@ export default {
       return {
         'text-blue-300': this.$route.path.includes(path),
       }
+    },
+    pathCreate(index, path) {
+      if (index === 1) {
+        const editPath = `/user/${this.user.id}/edit`
+        return editPath
+      }
+      return path
     },
   },
 }

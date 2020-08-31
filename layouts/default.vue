@@ -1,8 +1,10 @@
 <template>
-  <div class="min-h-screen mx-auto">
-    <l-header :user="getUser" />
-    <Nuxt />
-    <l-footer-box :user="getUser" />
+  <div class="mx-auto">
+    <div class="min-h-screen container mx-auto border">
+      <l-header :user="getUser" />
+      <Nuxt />
+      <l-footer-box :user="getUser" />
+    </div>
   </div>
 </template>
 

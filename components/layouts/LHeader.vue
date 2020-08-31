@@ -1,7 +1,7 @@
 <template>
   <header class="w-full l-header">
     <div
-      class="container px-5 py-2 shadow mx-auto flex items-center justify-between"
+      class="container px-5 py-2 border-b mx-auto flex items-center justify-between"
     >
       <h1 class="block">TwiLink</h1>
       <div v-if="!user">
@@ -24,14 +24,14 @@
 import { userMapper } from '@/store/user'
 
 export default {
-  methods: {
-    ...userMapper.mapActions(['login']),
-  },
   props: {
     user: {
       type: Object,
       default: null,
     },
+  },
+  methods: {
+    ...userMapper.mapActions(['login']),
   },
 }
 </script>

@@ -1,5 +1,7 @@
 <template>
-  <ul class="flex justify-center space-x-6 px-4 pt-1 pb-2 border-b">
+  <ul
+    class="flex container mx-auto justify-center space-x-6 px-4 pt-1 pb-2 border-b"
+  >
     <li
       v-for="(link, index) in links"
       :key="index"

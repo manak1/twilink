@@ -27,10 +27,20 @@
     return userData
   }
 
-
+  /* uidでユーザーを取得 */
   async getUser(uid: string): Promise<User> {
     const doc = await this.$fb.firestore().collection('users').doc(uid).get()
     return doc.data()
+  }
+
+  async getUserById(id:string):Promise<User> {
+    const result = await this.$fb.firestore().collection('users').where('id',"==",id).get()
+    const userData = result.docs.map((d:any)=>{
+      return {
+        ...d.data()
+      }
+    })
+    return userData[0]
   }
 
   async updateUser(uid: string, user: User): Promise<void> {
