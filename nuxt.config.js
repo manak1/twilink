@@ -35,7 +35,11 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [{ src: '~/plugins/firebase.js' }, '@/service/AuthService.ts'],
+  plugins: [
+    { src: '~/plugins/firebase.js' },
+    '@/service/AuthService.ts',
+    { src: '~/plugins/vuedraggable.js', ssr: false },
+  ],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components

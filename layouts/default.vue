@@ -1,6 +1,6 @@
 <template>
   <div class="mx-auto">
-    <div class="min-h-screen container mx-auto border">
+    <div class="min-h-screen container mx-auto border-r border-l border-t">
       <l-header :user="getUser" />
       <Nuxt />
       <l-footer-box :user="getUser" />
@@ -14,9 +14,9 @@ export default {
   computed: {
     ...userMapper.mapGetters(['getUser']),
   },
-  mounted() {
+  /* mounted() {
     this.relogin()
-  },
+  }, */
   methods: {
     ...userMapper.mapActions(['relogin']),
   },

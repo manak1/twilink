@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="px-5 text-center">
     <h2 class="text-center">setting</h2>
   </div>
 </template>
@@ -9,5 +9,3 @@ export default {
   layout: 'project',
 }
 </script>
-
-<style lang="scss" scoped></style>

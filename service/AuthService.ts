@@ -19,7 +19,13 @@
       name: user.user.displayName,
       id:user.additionalUserInfo.username,
       icon: user.user.photoURL,
-      urls: []
+      urls: [
+        {
+          id: 1,
+          text:"testtest",
+          url:'https://hellomanaki.com'
+        }
+      ]as any
     }
     await this.$fb.firestore().collection('users').doc(user.user.uid).set({
       ...userData

@@ -10,7 +10,7 @@
     </div>
     <div class="text-center mt-4">
       <ui-login-button text="リンクページを作る" />
-      <p class="mt-2">あなたのリンクページをつくろう！</p>
+      <p class="mt-2">あなただけのリンクページをつくろう！</p>
     </div>
   </section>
 </template>

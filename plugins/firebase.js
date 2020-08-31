@@ -23,3 +23,5 @@ export default (context, inject) => {
   }
   inject('fb', $fb)
 }
+
+export const aurh = Firebase.auth()

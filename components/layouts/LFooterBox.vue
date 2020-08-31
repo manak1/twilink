@@ -52,18 +52,15 @@ export default {
       ],
     }
   },
-  computed: {
-    userId() {
-      if (!this.user) {
-        return '123'
-      }
-      return this.user.id
-    },
-  },
   methods: {
     activeClass(path) {
+      const splitedUrl = this.$route.path.split('/')
+      const splitedPath = path.split('/')
+      console.log(splitedPath, splitedUrl)
       return {
-        'text-blue-300': this.$route.path.includes(path),
+        'l-footerBox__active':
+          `/${splitedUrl[splitedUrl.length - 1]}` ===
+          `/${splitedPath[splitedPath.length - 1]}`,
       }
     },
     pathCreate(index, path) {

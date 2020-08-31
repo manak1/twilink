@@ -1,8 +1,9 @@
 export { }
 declare global {
   interface Url {
-    url: string,
+    urls: Object[],
     text: string
+    url:string
   }
 
   interface User {

@@ -28,7 +28,8 @@
     "@typescript-eslint/parser": "^3.10.1",
     "firebase": "^7.19.1",
     "nuxt": "^2.14.0",
-    "nuxt-fontawesome": "^0.4.0"
+    "nuxt-fontawesome": "^0.4.0",
+    "vuedraggable": "^2.24.1"
   },
   "devDependencies": {
     "@nuxt/types": "^2.14.4",
