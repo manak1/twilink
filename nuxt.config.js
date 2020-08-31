@@ -64,6 +64,16 @@ export default {
       },
     ],
   },
+  env: {
+    apiKey: process.env.apiKey,
+    authDomain: process.env.authDomain,
+    databaseURL: process.env.databaseURL,
+    projectId: process.env.projectId,
+    storageBucket: process.env.stroageBucket,
+    messagingSenderId: process.env.messagingSenderId,
+    appId: process.env.appId,
+    measurementId: process.env.measurementId,
+  },
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
