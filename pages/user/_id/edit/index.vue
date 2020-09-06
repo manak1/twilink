@@ -7,7 +7,7 @@
     <ul class="pt-4">
       <draggable
         v-model="ghostUrls"
-        class="space-y-4"
+        class="space-y-3"
         handle=".handle"
         animation="100"
       >

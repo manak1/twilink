@@ -1,10 +1,12 @@
 <template>
   <div class="mx-auto bg-gray-100">
     <div
-      class="min-h-screen container bg-white mx-auto border-r border-l border-t"
+      class="min-h-screen flex flex-col container bg-white mx-auto border-r border-l border-t"
     >
       <l-header :user="getUser" />
       <Nuxt />
+      <div class="flex-grow"></div>
+      <l-footer />
       <l-footer-box :user="getUser" />
     </div>
   </div>
