@@ -42,7 +42,6 @@ export const actions = {
       if (!user) {
         return
       }
-      console.log(user, 'check me')
       const uid = user.uid
       const authInstance = new AuthService(this.$fb)
       const userData = await authInstance.getUser(uid)

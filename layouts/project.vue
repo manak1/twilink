@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto">
+  <div v-if="getUser" class="mx-auto">
     <div class="container mx-auto min-h-screen border">
       <l-header :user="getUser" />
       <l-switcher />

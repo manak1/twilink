@@ -5,6 +5,7 @@
       class="rounded-full h-24 mx-auto"
       :alt="`${user.name}のアイコン`"
     />
+    <h2>{{ userIcon }}</h2>
     <h2 class="text-center mt-2">{{ user.name }}</h2>
   </div>
 </template>
@@ -13,7 +14,6 @@
 import { AuthService } from '@/service/AuthService'
 export default {
   async asyncData({ app, params }) {
-    console.log(params)
     const authInstance = new AuthService(app.$fb)
     const user = await authInstance.getUserById(params.id)
     return {

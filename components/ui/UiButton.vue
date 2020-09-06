@@ -1,12 +1,10 @@
 <template>
   <a
     href="#"
-    class="inline-block bg-blue text-white w-2/3 py-4 hover:opacity-70"
-    style="border-radius: 30px"
+    class="inline-block c-button bg-blue text-white w-2/3 py-4"
     @click.prevent="$emit('clickEvent')"
   >
     <div class="flex justify-center items-center">
-      <font-awesome-icon icon="plus" class="text-xl mr-4" />
       <span>{{ text }}</span>
     </div>
   </a>
@@ -22,3 +20,14 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.c-button {
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.08) 0 8px 28px;
+}
+
+.c-button:hover {
+  background-color: rgb(26, 145, 218);
+}
+</style>

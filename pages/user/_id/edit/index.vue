@@ -1,5 +1,9 @@
 <template>
-  <div v-if="getUser" class="text-center relative max-h-screen px-5">
+  <div
+    v-if="getUser"
+    class="text-center relative px-5"
+    style="padding-bottom: 160px"
+  >
     <ul class="pt-4">
       <draggable
         v-model="ghostUrls"

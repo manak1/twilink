@@ -56,7 +56,6 @@ export default {
     activeClass(path) {
       const splitedUrl = this.$route.path.split('/')
       const splitedPath = path.split('/')
-      console.log(splitedPath, splitedUrl)
       return {
         'l-footerBox__active':
           `/${splitedUrl[splitedUrl.length - 1]}` ===

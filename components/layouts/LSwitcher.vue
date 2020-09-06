@@ -1,6 +1,6 @@
 <template>
   <ul
-    class="flex container mx-auto justify-center space-x-6 px-4 pt-1 pb-2 border-b"
+    class="flex relative container mx-auto justify-center space-x-6 px-4 pt-1 pb-2 border-b"
   >
     <li
       v-for="(link, index) in links"
@@ -12,6 +12,7 @@
         {{ link.text }}
       </nuxt-link>
     </li>
+    <li :class="activeBar"></li>
   </ul>
 </template>
 
@@ -22,18 +23,36 @@ export default {
       links: [
         {
           path: 'preview',
-          text: 'プレビュー',
+          text: '確認',
         },
         {
           path: 'edit',
           text: '編集',
         },
         {
-          path: 'setting',
-          text: '設定',
+          path: 'theme',
+          text: 'テーマ',
+        },
+        {
+          path: 'share',
+          text: 'シェア',
         },
       ],
     }
+  },
+  computed: {
+    activeBar() {
+      return {
+        switcherBar: true,
+        switcherBar__edit: this.getPage === 'edit',
+        switcherBar__theme: this.getPage === 'theme',
+        switcherBar__share: this.getPage === 'share',
+      }
+    },
+    getPage() {
+      const urls = this.$route.path.split('/')
+      return urls[urls.length - 1]
+    },
   },
 }
 </script>
@@ -43,15 +62,25 @@ export default {
   position: relative;
 }
 
-.activeLink::after {
-  content: '';
+.switcherBar {
   position: absolute;
-  bottom: -4px;
-  left: 50%;
-  width: 40px;
+  bottom: 0;
+  left: 20%;
+  width: 50px;
   height: 2px;
   background-color: #1da1f2;
-  display: inline-block;
-  transform: translateX(-50%);
+  transition: 0.5s cubic-bezier(0.865, 0.2, 0.15, 0.86);
+}
+
+.switcherBar__edit {
+  left: 31%;
+}
+
+.switcherBar__theme {
+  left: 44%;
+}
+
+.switcherBar__share {
+  left: 58%;
 }
 </style>
