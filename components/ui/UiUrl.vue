@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="urlData"
-    class="w-full c-transition relative rounded-md border c-border mx-auto flex justify-center bg-white items-center"
+    class="w-full c-transition relative rounded-md border c-border mx-auto flex justify-center hover:shadow-md bg-white items-center"
   >
     <div class="w-12 block text-center py-4 handle cursor-move">
       <font-awesome-icon icon="bars" class="text-sm mx-auto text-center" />
@@ -11,7 +11,7 @@
       class="w-full py-4 border-l relative text-left pl-2"
       style="border-color: #e6ecf0"
     >
-      <div class="flex flex-col space-y-2" :class="editMode">
+      <div class="flex flex-col sm:space-y-2" :class="editMode">
         <span class="text-gray-500 text-sm">
           <template v-if="!edit">
             <font-awesome-icon icon="link" class="text-sm" />
@@ -33,7 +33,7 @@
         <span class="text-gray-500">
           <template v-if="!edit">
             <font-awesome-icon icon="heading" class="text-sm text-gray-500" />
-            <p class="text-gray-500 inline-block">{{ urlData.text }}</p>
+            <p class="text-gray-500 inline-block text-sm">{{ urlData.text }}</p>
           </template>
           <template v-if="edit">
             <label for="url_text">
@@ -41,7 +41,7 @@
             </label>
             <input
               id="url_text"
-              class="w-11/12 outline-none text-black"
+              class="w-11/12 outline-none text-sm text-black"
               type="text"
               placeholder="ボタンの文字を入力"
               :value="urlData.text"
@@ -61,7 +61,7 @@
         </div>
       </transition>
     </div>
-    <div class="flex absolute right-0 bottom-0 p-2 space-x-2">
+    <div class="flex absolute right-0 bottom-0 p-2 space-x-1">
       <a
         v-if="!edit"
         href="#"
@@ -118,7 +118,7 @@ export default {
     },
   },
   mounted() {
-    this.dummyUrlData = this.urlData
+    this.dummyUrlData = { ...this.urlData }
   },
   methods: {
     switchEdit() {

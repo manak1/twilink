@@ -12,7 +12,8 @@
         {{ link.text }}
       </nuxt-link>
     </li>
-    <li :class="activeBar"></li>
+    <li :class="activeBarSp" class="sm:hidden"></li>
+    <li :class="activeBar" class="hidden sm:block"></li>
   </ul>
 </template>
 
@@ -49,6 +50,14 @@ export default {
         switcherBar__share: this.getPage === 'share',
       }
     },
+    activeBarSp() {
+      return {
+        switcherBarSp: true,
+        switcherBarSp__edit: this.getPage === 'edit',
+        switcherBarSp__theme: this.getPage === 'theme',
+        switcherBarSp__share: this.getPage === 'share',
+      }
+    },
     getPage() {
       const urls = this.$route.path.split('/')
       return urls[urls.length - 1]
@@ -65,7 +74,7 @@ export default {
 .switcherBar {
   position: absolute;
   bottom: 0;
-  left: 20%;
+  left: 100px;
   width: 50px;
   height: 2px;
   background-color: #1da1f2;
@@ -73,14 +82,36 @@ export default {
 }
 
 .switcherBar__edit {
-  left: 31%;
+  left: 150px;
 }
 
 .switcherBar__theme {
-  left: 44%;
+  left: 210px;
 }
 
 .switcherBar__share {
-  left: 58%;
+  left: 280px;
+}
+
+.switcherBarSp {
+  position: absolute;
+  bottom: 0;
+  left: 45px;
+  width: 50px;
+  height: 2px;
+  background-color: #1da1f2;
+  transition: 0.5s cubic-bezier(0.865, 0.2, 0.15, 0.86);
+}
+
+.switcherBarSp__edit {
+  left: 100px;
+}
+
+.switcherBarSp__theme {
+  left: 160px;
+}
+
+.switcherBarSp__share {
+  left: 225px;
 }
 </style>

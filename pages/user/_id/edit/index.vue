@@ -64,7 +64,7 @@ export default {
 
 <style scoped>
 .c-addButton {
-  bottom: 80px;
+  bottom: 65px;
   left: 50%;
   transform: translateX(-50%);
 }
