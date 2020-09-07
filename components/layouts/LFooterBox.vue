@@ -77,6 +77,7 @@ export default {
 .l-footerBox {
   left: 50%;
   transform: translateX(-50%);
+  padding-bottom: calc(env(safe-area-inset-bottom));
 }
 
 .l-footerBox__active {

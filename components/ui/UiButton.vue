@@ -1,30 +1,43 @@
 <template>
   <a
     href="#"
-    class="inline-block c-button bg-blue text-white w-2/3 py-3"
+    class="inline-block ml-auto relative c-button rounded-full bg-blue text-white py-3"
     @click.prevent="$emit('clickEvent')"
   >
-    <div class="flex justify-center items-center">
-      <span>{{ text }}</span>
-    </div>
   </a>
 </template>
 
 <script>
-export default {
-  props: {
-    text: {
-      type: String,
-      required: true,
-    },
-  },
-}
+export default {}
 </script>
 
 <style scoped>
 .c-button {
-  border-radius: 30px;
+  width: 55px;
+  height: 55px;
   box-shadow: rgba(0, 0, 0, 0.08) 0 8px 28px;
+}
+
+.c-button::after {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  content: '';
+  width: 21px;
+  height: 21px;
+  background-image: url('~assets/images/ui/button/link-solid.svg');
+  display: block;
+}
+
+.c-button::before {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-image: url('~assets/images/ui/button/plus-solid.svg');
+  display: block;
 }
 
 .c-button:hover {

@@ -16,7 +16,7 @@
         </li>
       </draggable>
     </ul>
-    <div class="fixed w-full container c-addButton">
+    <div class="fixed w-full text-right pr-5 container c-addButton">
       <UiButton text="URLを追加する" @clickEvent="addNewUrl" />
     </div>
   </div>
