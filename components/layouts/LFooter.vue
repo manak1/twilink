@@ -8,7 +8,7 @@
         <a href="#">ツイッター</a>
       </div>
       <section>
-        <h3 class="mt-6 font-bold">開発者</h3>
+        <h3 class="mt-6 font-bold">運営者</h3>
         <div class="mt-2">
           <a href="#" class="flex justify-center items-center block space-x-2">
             <img
@@ -46,7 +46,7 @@
       </section>
     </section>
     <div class="mt-4 text-center text-gray-800">
-      <small>&copy;hungrypenguin</small>
+      <small>&copy; hungrypenguin</small>
     </div>
   </footer>
 </template>

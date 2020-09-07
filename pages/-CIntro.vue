@@ -1,30 +1,29 @@
 <template>
-  <section class="mx-auto px-5">
-    <div>
-      <h2 class="text-center text-xl mt-4">TwiLinkとは？</h2>
-      <figure class="pt-2">
-        <img
-          src="@/assets/images/pages/intro/undraw_share_link_qtxe.svg"
-          alt="リンクを表現する画像"
-          class="w-2/3 mx-auto"
-        />
-      </figure>
-      <!--  <p class="mt-2">
+  <section class="mx-auto px-5 pb-4">
+    <h2 class="text-center text-xl mt-4">TwiLinkとは？</h2>
+    <figure class="pt-2">
+      <img
+        src="@/assets/images/pages/intro/undraw_share_link_qtxe.svg"
+        alt="リンクを表現する画像"
+        class="w-2/3 mx-auto"
+      />
+    </figure>
+    <!--  <p class="mt-2">
         Twitterのプロフィールにいろんなリンクを貼りたいけど、ごちゃごちゃしちゃう(
         ;∀;)！！<br />そんな貴方の為にあるアプリです。
       </p>
       <p>シンプルにリンクは一つだけ！あなただけのリンク集をつくろう！！</p> -->
-      <p class="mt-6 px-3 text-sm mx-auto leading-6">
-        リンクをたくさん貼るとごちゃごちゃしがちな<br />
-        プロフィールをシンプルにリンク1つにまとめることができるサービスです。
-      </p>
+    <p class="mt-6 px-3 text-sm mx-auto leading-6">
+      リンクをたくさん貼るとごちゃごちゃしがちな<br />
+      Twitterプロフィールをシンプルにリンク1つで<br />
+      まとめることができるサービスです。
+    </p>
 
-      <div class="text-center mt-8">
-        <ui-login-button text="リンクページを作る" />
-        <p class="mt-3 text-xs text-gray-800">
-          あなただけのリンクページをつくろう！
-        </p>
-      </div>
+    <div class="text-center mt-8">
+      <ui-login-button text="リンクページを作る" />
+      <p class="mt-3 text-xs text-gray-800">
+        あなただけのリンクページをつくろう！
+      </p>
     </div>
   </section>
 </template>

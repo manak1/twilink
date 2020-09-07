@@ -26,6 +26,7 @@
 <script>
 import { AuthService } from '@/service/AuthService'
 export default {
+  layout: 'user',
   async asyncData({ app, params }) {
     const authInstance = new AuthService(app.$fb)
     const user = await authInstance.getUserById(params.id)
