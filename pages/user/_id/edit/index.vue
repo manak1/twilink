@@ -17,8 +17,14 @@
       </draggable>
     </ul>
     <div class="fixed w-full text-right pr-5 container c-addButton">
-      <UiButton text="URLを追加する" @clickEvent="addNewUrl" />
+      <UiButton text="URLを追加する" @clickEvent="edit = !edit" />
     </div>
+    <transition
+      enter-active-class="animated slideInUp c-animation__in"
+      leave-active-class="animated c-animation__out"
+    >
+      <CreateModal v-if="edit" @close="edit = !edit" />
+    </transition>
   </div>
 </template>
 
@@ -34,6 +40,7 @@ export default {
   data() {
     return {
       ghostUrls: null,
+      edit: false,
     }
   },
   computed: {
@@ -67,5 +74,19 @@ export default {
   bottom: 65px;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.c-animation__in {
+  -webkit-animation-name: fadeinup;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 0.2s;
+  animation-duration: 0.2s;
+}
+
+.c-animation__out {
+  -webkit-animation-name: fadeout;
+  animation-name: fadeOut;
+  -webkit-animation-duration: 0.2s;
+  animation-duration: 0.2s;
 }
 </style>
