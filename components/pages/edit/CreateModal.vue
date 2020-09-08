@@ -2,7 +2,7 @@
   <UiModal>
     <div class="c-modal py-3 px-5 flex justify-between border-b">
       <a href="#" class="block" @click.prevent="$emit('close')">
-        <font-awesome-icon class="c-icon" icon="times" />
+        <font-awesome-icon class="c-icon text-xl" icon="times" />
       </a>
       <div>
         <a
