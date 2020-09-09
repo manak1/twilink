@@ -74,7 +74,7 @@ export default {
 
 .c-animation__in {
   -webkit-animation-name: fadeinup;
-  animation-name: fadeinup;
+  animation-name: fadeInUp;
   -webkit-animation-duration: 0.2s;
   animation-duration: 0.2s;
 }
