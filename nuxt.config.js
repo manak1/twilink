@@ -39,6 +39,7 @@ export default {
     { src: '~/plugins/firebase.js' },
     '@/service/AuthService.ts',
     { src: '~/plugins/vuedraggable.js', ssr: false },
+    '@/plugins/vuelidate',
   ],
   /*
    ** Auto import components

@@ -80,7 +80,7 @@ export default {
 }
 
 .c-animation__out {
-  -webkit-animation-name: fadenoutdown;
+  -webkit-animation-name: fadeoutdown;
   animation-name: fadeOutDown;
   -webkit-animation-duration: 0.2s;
   animation-duration: 0.2s;
