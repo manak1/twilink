@@ -4,19 +4,18 @@
     class="fixed bottom-0 w-full overflow-hidden px-3 bg-white shadow-sm container l-footerBox z-50"
     style="box-shadow: 0 0 2px rgba(0, 0, 0, 0.25); color: #555"
   >
-    <ul class="flex justify-center space-x-4 text-xs text-center">
+    <ul class="flex justify-center space-x-2 text-xs text-center">
       <li
         v-for="(link, index) in links"
         :key="index"
         class="flex flex-col w-1/5"
       >
         <nuxt-link
-          class="block pb-1 py-2"
+          class="block py-3"
           :to="pathCreate(index, link.path)"
           :class="activeClass(link.path)"
         >
-          <font-awesome-icon :icon="link.icon" class="text-lg" />
-          <p>{{ link.text }}</p>
+          <font-awesome-icon :icon="link.icon" class="text-2xl" />
         </nuxt-link>
       </li>
     </ul>

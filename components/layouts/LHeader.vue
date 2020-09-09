@@ -1,7 +1,7 @@
 <template>
   <header class="w-full l-header">
     <div
-      class="container px-5 py-2 border-b mx-auto flex items-center justify-between"
+      class="container px-5 py-1 border-b mx-auto flex items-center justify-between"
     >
       <nuxt-link to="/">
         <h1 class="block">TwiLink</h1>

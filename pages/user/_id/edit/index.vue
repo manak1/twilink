@@ -1,9 +1,5 @@
 <template>
-  <div
-    v-if="getUser"
-    class="text-center relative px-5"
-    style="padding-bottom: 160px"
-  >
+  <div v-if="getUser" class="text-center px-5" style="padding-bottom: 160px">
     <ul class="pt-4">
       <draggable
         v-model="ghostUrls"
@@ -78,14 +74,14 @@ export default {
 
 .c-animation__in {
   -webkit-animation-name: fadeinup;
-  animation-name: fadeIn;
+  animation-name: fadeinup;
   -webkit-animation-duration: 0.2s;
   animation-duration: 0.2s;
 }
 
 .c-animation__out {
-  -webkit-animation-name: fadeout;
-  animation-name: fadeOut;
+  -webkit-animation-name: fadenoutdown;
+  animation-name: fadeOutDown;
   -webkit-animation-duration: 0.2s;
   animation-duration: 0.2s;
 }

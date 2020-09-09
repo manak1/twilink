@@ -20,11 +20,12 @@
       </div>
       <form class="w-full space-y-2 pt-2">
         <div class="flex space-x-1">
-          <label for="url">
+          <label for="button_url">
             <font-awesome-icon class="c-icon__head" icon="link" />
           </label>
           <input
-            id="url"
+            id="button_url"
+            v-model="dummyData.url"
             type="url"
             class="outline-none w-full text-base"
             placeholder="URLを入力"
@@ -32,11 +33,12 @@
           />
         </div>
         <div class="flex space-x-1">
-          <label for="url">
+          <label for="button_text">
             <font-awesome-icon class="c-icon__head" icon="heading" />
           </label>
           <input
-            id="text"
+            id="button_text"
+            v-model="dummyData.text"
             type="text"
             class="outline-none w-full text-base"
             placeholder="表示テキストを入力"
@@ -61,11 +63,33 @@
 <script>
 import { userMapper } from '@/store/user'
 export default {
+  data() {
+    return {
+      dummyData: {
+        url: '',
+        text: '',
+        options: {
+          visible: false,
+        },
+      },
+    }
+  },
   computed: {
     ...userMapper.mapGetters(['getUser']),
     getImage() {
       return this.getUser.icon.replace('_normal', '_bigger')
     },
+    props: {
+      buttonData: {
+        type: Object,
+        default: null,
+      },
+    },
+  },
+  mounted() {
+    if (this.buttonData) {
+      this.dummyData = { ...this.buttonData }
+    }
   },
 }
 </script>

@@ -1,7 +1,6 @@
 <template>
   <div
-    class="fixed container border-r border-l top-0 bottom-0 c-center right-0 bg-white"
-    style="left: 50%; transform: translate(-50%)"
+    class="container mx-auto absolute w-full left-0 right-0 top-0 bottom-0 container border-r border-l top-0 bottom-0 c-center bg-white"
   >
     <slot />
   </div>
@@ -10,10 +9,3 @@
 <script>
 export default {}
 </script>
-
-<style>
-.c-ceter {
-  left: 50%;
-  transform: translateX(-50%);
-}
-</style>
