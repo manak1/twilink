@@ -1,6 +1,6 @@
 <template>
   <ul
-    class="flex relative container mx-auto justify-center space-x-6 px-4 pt-1 pb-2 border-b"
+    class="flex relative container mx-auto justify-center space-x-6 px-4 border-b"
   >
     <li
       v-for="(link, index) in links"
@@ -8,7 +8,7 @@
       class="text-sm relative"
       :class="{ activeLink: $route.path.includes(link.path) }"
     >
-      <nuxt-link :to="link.path">
+      <nuxt-link :to="link.path" class="block pt-1 pb-2">
         {{ link.text }}
       </nuxt-link>
     </li>
@@ -74,7 +74,7 @@ export default {
 .switcherBar {
   position: absolute;
   bottom: 0;
-  left: 100px;
+  left: 95px;
   width: 50px;
   height: 2px;
   background-color: #1da1f2;
@@ -90,7 +90,7 @@ export default {
 }
 
 .switcherBar__share {
-  left: 280px;
+  left: 275px;
 }
 
 .switcherBarSp {
