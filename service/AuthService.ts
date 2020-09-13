@@ -1,7 +1,7 @@
- export class AuthService {
-  protected $fb:any
+export class AuthService {
+  protected $fb: any
 
-  constructor($fb:any) {
+  constructor($fb: any) {
     this.$fb = $fb
   }
 
@@ -10,27 +10,28 @@
     const result = await this.$fb.auth().signInWithPopup(provider)
     return result
   }
-  async logout():Promise<void> {
+  async logout(): Promise<void> {
     this.$fb.auth().signOut()
   }
 
   async createNewAccount(user: AuthUser) {
-    const userData:User = {
-      name: user.user.displayName,
-      id:user.additionalUserInfo.username,
-      icon: user.user.photoURL,
-      urls: [
-        {
-          id: 1,
-          text:"testtest",
-          url:'https://hellomanaki.com'
-        }
-      ]as any
+    const doc = await this.$fb.firestore().collection('users').doc(user.user.uid).get()
+    if(doc.exists) {
+      return doc.data()
     }
-    await this.$fb.firestore().collection('users').doc(user.user.uid).set({
-      ...userData
-    })
-    return userData
+    else {
+      const userData: User = {
+        name: user.user.displayName,
+        id: user.additionalUserInfo.username,
+        icon: user.user.photoURL,
+        urls: [] as any
+      }
+      await this.$fb.firestore().collection('users').doc(user.user.uid).set({
+        ...userData,
+        uid: user.user.uid
+      })
+      return userData
+    }
   }
 
   /* uidでユーザーを取得 */
@@ -39,9 +40,9 @@
     return doc.data()
   }
 
-  async getUserById(id:string):Promise<User> {
-    const result = await this.$fb.firestore().collection('users').where('id',"==",id).get()
-    const userData = result.docs.map((d:any)=>{
+  async getUserById(id: string): Promise<User> {
+    const result = await this.$fb.firestore().collection('users').where('id', "==", id).get()
+    const userData = result.docs.map((d: any) => {
       return {
         ...d.data()
       }
@@ -54,5 +55,12 @@
       ...user
     })
   }
+
+  async updateButtonData(uid: string, urls: any) {
+    console.log('Authservice',urls)
+    await this.$fb.firestore().collection('users').doc(uid).update({
+      "urls": urls
+    })
+  }
 }
- 
+

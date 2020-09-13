@@ -13,6 +13,10 @@ export const mutations = {
   resetUser(state) {
     state.user = null
   },
+  updateUrls(state, urls) {
+    alert('updated urls')
+    state.user.urls = urls
+  },
   addUrl(state) {
     state.user.urls.push({
       id: Math.random().toString(36).substr(0, 32),
@@ -45,15 +49,10 @@ export const actions = {
       const uid = user.uid
       const authInstance = new AuthService(this.$fb)
       const userData = await authInstance.getUser(uid)
+      userData.uid = uid
       this.commit('loaded/updateLoaded')
       commit('setUser', userData)
     })
-  },
-
-  async relogin2({ commit }, user) {
-    const authInstance = new AuthService(this.$fb)
-    const userData = await authInstance.getUser(user.uid)
-    commit('setUser', userData)
   },
 
   async logout({ commit }) {
