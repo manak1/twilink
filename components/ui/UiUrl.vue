@@ -18,7 +18,7 @@
         <span class="text-gray-500">
           <font-awesome-icon icon="heading" class="text-sm text-gray-500" />
           <p class="text-gray-500 inline-block text-sm text-overflow">
-            {{ urlData.text }}
+            {{ trimText }}
           </p>
         </span>
       </div>
@@ -61,6 +61,14 @@ export default {
     return {
       dummyUrlData: null,
     }
+  },
+  computed: {
+    trimText() {
+      if (this.urlData.text.length >= 20) {
+        return this.urlData.text.slice(0, 18) + '...'
+      }
+      return this.urlData.text
+    },
   },
   mounted() {
     this.dummyUrlData = { ...this.urlData }

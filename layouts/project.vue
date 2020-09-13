@@ -1,6 +1,6 @@
 <template>
   <div v-if="getUser" class="mx-auto">
-    <div class="container mx-auto min-h-screen border">
+    <div class="container mx-auto min-h-screen border overflow-hidden">
       <l-header :user="getUser" />
       <l-switcher />
       <Nuxt />
@@ -24,7 +24,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .sortable-ghost {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);

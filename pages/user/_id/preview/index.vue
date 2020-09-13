@@ -1,12 +1,12 @@
 <template>
-  <div v-if="getUser" class="px-5 pt-4">
+  <div v-if="getUser" class="l-insta px-5 pt-4" style="min-height: 90vh">
     <img
       :src="getImage"
       class="rounded-full h-24 mx-auto"
       :alt="`${getUser.name}のアイコン`"
     />
-    <h2 class="text-center mt-2">{{ getUser.name }}</h2>
-    <ul class="space-y-4 mt-4">
+    <h2 class="text-center mt-2 text-white">@{{ getUser.name }}</h2>
+    <ul class="test-ui space-y-4 mt-4">
       <li v-for="(url, index) in getUser.urls" :key="index">
         <UiLinkButton :url-data="url" />
       </li>
@@ -29,3 +29,7 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+@import '~/assets/scss/buttons';
+</style>

@@ -1,7 +1,7 @@
 <template>
   <a
     :href="urlData.url"
-    class="block w-full text-center shadow py-4"
+    class="w-full c-button text-center text-white py-4"
     target="_blank"
   >
     {{ urlData.text }}

@@ -7,10 +7,11 @@ declare global {
   }
 
   interface User {
-    name: string,
-    icon: string,
+    name: string
+    icon: string
     id:string
     urls: Url[]
+    color: string
   }
 
   interface AuthUser {

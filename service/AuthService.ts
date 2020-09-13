@@ -24,6 +24,7 @@ export class AuthService {
         name: user.user.displayName,
         id: user.additionalUserInfo.username,
         icon: user.user.photoURL,
+        color: '#1da2f1',
         urls: [] as any
       }
       await this.$fb.firestore().collection('users').doc(user.user.uid).set({
