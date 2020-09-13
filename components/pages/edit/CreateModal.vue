@@ -1,5 +1,5 @@
 <template>
-  <UiModal>
+  <UiModal full>
     <div class="c-modal py-3 px-5 flex justify-between border-b">
       <a href="#" class="block" @click.prevent="$emit('close')">
         <font-awesome-icon class="c-icon text-xl" icon="times" />
@@ -10,12 +10,14 @@
           :class="iconButtonClass"
           :disabled="$v.dummyData.$invalid"
           class="c-button text-white px-2 py-2 text-sm rounded-lg"
-          @click.prevent=""
+          @click.prevent="handleSubmit"
         >
-          URLを追加する
+          <span v-if="mode === 'edit'">URLを更新する</span>
+          <span v-else>URLを追加する</span>
         </a>
       </div>
     </div>
+    <h2>{{ mode }}</h2>
     <div class="px-4 mt-3 flex w-full space-x-4">
       <div class="w-16">
         <img :src="getImage" class="rounded-full" alt="" />
@@ -57,20 +59,11 @@
         </div>
         <div class="pt-8 text-sm">
           <div class="pb-12">
-            <p class="text-left">ボタンのイメージ</p>
-            <a
-              href="#"
-              class="mt-4 inline-block c-preview__button py-6 border w-full rounded shadow"
-              style="max-width: 100%"
-            >
-              <p v-if="dummyData.text" class="breaka-all">
-                {{ dummyData.text }}
-              </p>
-              <p v-else>ここにテキストが入るよ(ﾟωﾟ)</p>
-            </a>
+            <p class="text-left text-sm">ボタンのイメージ</p>
+            <UiPreviewButton v-if="dummyData" :text="dummyData.text" />
           </div>
           <hr />
-          <ul class="flex">
+          <ul v-if="dummyData" class="flex">
             <li class="pt-2">
               <a
                 href="#"
@@ -103,28 +96,15 @@ export default {
       type: Object,
       default: null,
     },
+    mode: {
+      type: String,
+      required: true,
+    },
   },
   data() {
     return {
-      dummyData: {
-        url: '',
-        text: '',
-        options: {
-          visible: true,
-        },
-      },
+      dummyData: null,
     }
-  },
-  validations: {
-    dummyData: {
-      url: {
-        required,
-        url,
-      },
-      text: {
-        required,
-      },
-    },
   },
   computed: {
     ...userMapper.mapGetters(['getUser']),
@@ -154,9 +134,34 @@ export default {
     },
   },
   mounted() {
-    if (this.buttonData) {
-      this.dummyData = { ...this.buttonData }
-    }
+    this.dummyData = { ...this.buttonData }
+  },
+  methods: {
+    addButtonData() {
+      this.$emit('addButtonData', this.dummyData)
+    },
+    updateButtonData() {
+      this.$emit('updateButtonData', this.dummyData)
+    },
+    handleSubmit() {
+      if (this.mode === 'edit') {
+        console.log('edit function')
+        this.updateButtonData()
+      } else {
+        this.addButtonData()
+      }
+    },
+  },
+  validations: {
+    dummyData: {
+      url: {
+        required,
+        url,
+      },
+      text: {
+        required,
+      },
+    },
   },
 }
 </script>
@@ -171,6 +176,7 @@ export default {
 }
 
 .c-invalid {
+  transition: 0.2s ease-in;
   color: red;
 }
 
@@ -180,15 +186,11 @@ export default {
 }
 
 .c-valid {
+  transition: 0.2s ease-in;
   color: #1da1f2;
 }
 
 .c-button {
   background-color: #1da1f2;
-}
-
-.c-preview__button {
-  padding: 12px;
-  border-color: #1da2f1;
 }
 </style>

@@ -3,6 +3,7 @@ module.exports = {
     backgroundColor: (theme) => ({
       ...theme('colors'),
       blue: '#1da1f2',
+      delete: '#E1255E',
     }),
   },
   variants: {},
