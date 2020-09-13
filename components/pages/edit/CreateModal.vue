@@ -145,7 +145,6 @@ export default {
     },
     handleSubmit() {
       if (this.mode === 'edit') {
-        console.log('edit function')
         this.updateButtonData()
       } else {
         this.addButtonData()

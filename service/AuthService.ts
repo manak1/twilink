@@ -57,7 +57,6 @@ export class AuthService {
   }
 
   async updateButtonData(uid: string, urls: any) {
-    console.log('Authservice',urls)
     await this.$fb.firestore().collection('users').doc(uid).update({
       "urls": urls
     })
