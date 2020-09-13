@@ -1,0 +1,9 @@
+templates: 
+  - title: シンプル
+    class: l-dark
+
+  - title: ラベル
+    class: l-label
+
+  - title: インスタ風
+    class: l-insta
