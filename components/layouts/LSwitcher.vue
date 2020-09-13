@@ -96,7 +96,7 @@ export default {
 .switcherBarSp {
   position: absolute;
   bottom: 0;
-  left: 45px;
+  left: 46px;
   width: 50px;
   height: 2px;
   background-color: #1da1f2;
@@ -104,14 +104,14 @@ export default {
 }
 
 .switcherBarSp__edit {
-  left: 100px;
+  left: 97px;
 }
 
 .switcherBarSp__theme {
-  left: 160px;
+  left: 157px;
 }
 
 .switcherBarSp__share {
-  left: 225px;
+  left: 223px;
 }
 </style>

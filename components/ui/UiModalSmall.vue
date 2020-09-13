@@ -1,6 +1,6 @@
 <template>
   <div
-    class="c-modal container mx-auto absolute w-full left-0 bg-black right-0 top-0 bottom-0 container border-r border-l top-0 bottom-0 bg-red"
+    class="c-modal container mx-auto fixed w-full left-0 bg-black right-0 top-0 bottom-0 container border-r border-l top-0 bottom-0 bg-red"
   >
     <div class="absolute c-center w-full" style="max-width: 320px">
       <slot />

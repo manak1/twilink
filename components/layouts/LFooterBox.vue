@@ -13,7 +13,7 @@
         <nuxt-link
           class="block py-3"
           :to="pathCreate(index, link.path)"
-          :class="activeClass(link.path)"
+          :class="activeClass(link.path, index)"
         >
           <font-awesome-icon :icon="link.icon" class="text-2xl" />
         </nuxt-link>
@@ -52,9 +52,14 @@ export default {
     }
   },
   methods: {
-    activeClass(path) {
+    activeClass(path, index) {
       const splitedUrl = this.$route.path.split('/')
       const splitedPath = path.split('/')
+      if (index === 1) {
+        return {
+          'l-footerBox__active': splitedUrl[1] === 'user',
+        }
+      }
       return {
         'l-footerBox__active':
           `/${splitedUrl[splitedUrl.length - 1]}` ===

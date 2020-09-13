@@ -111,6 +111,7 @@ export default {
 
     async orderButtonData() {
       const updatedUrls = [...this.ghostUrls]
+      this.updateUrls(updatedUrls)
       const authInstance = new AuthService(this.$fb)
       await authInstance.updateButtonData(this.getUser.uid, updatedUrls)
     },

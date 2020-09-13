@@ -23,7 +23,7 @@
             </a>
           </a>
         </div>
-        <div class="mt-2">
+        <!-- <div class="mt-2">
           <a href="#" class="flex justify-center items-center block space-x-2">
             <img
               src="@/assets/images/layouts/footer/avatar1.svg"
@@ -33,7 +33,7 @@
               @zyung_zyung
             </a>
           </a>
-        </div>
+        </div> -->
         <!-- <div>
           <a href="htpps://twitter.com/mikeanakida">
             <img
