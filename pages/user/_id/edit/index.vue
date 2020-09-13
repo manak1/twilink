@@ -6,6 +6,7 @@
         class="space-y-3"
         handle=".handle"
         animation="100"
+        @change="orderButtonData()"
       >
         <li v-for="(link, index) in ghostUrls" :key="link.id" class="blcok">
           <UiUrl
@@ -38,7 +39,7 @@
         v-if="edit"
         :mode="mode"
         :button-data="buttonData"
-        @close="edit = !edit"
+        @close="closeModal"
         @updateButtonData="updateButtonData"
         @addButtonData="addButtonData"
       />
@@ -108,9 +109,15 @@ export default {
       return '_' + Math.random().toString(36).substr(2, 9)
     },
 
+    async orderButtonData() {
+      const updatedUrls = [...this.ghostUrls]
+      const authInstance = new AuthService(this.$fb)
+      await authInstance.updateButtonData(this.getUser.uid, updatedUrls)
+    },
+
     async updateButtonData(buttonData) {
       this.ghostUrls[this.index] = buttonData
-      const updatedUrls = this.ghostUrls.splice()
+      const updatedUrls = [...this.ghostUrls]
       const autnInstance = new AuthService(this.$fb)
       await autnInstance.updateButtonData(this.getUser.uid, updatedUrls)
       this.edit = false
@@ -120,10 +127,10 @@ export default {
 
     async addButtonData(buttonData) {
       this.ghostUrls.push(buttonData)
-      const updatedUrls = this.ghostUrls.slice()
-      this.updateUrls(updatedUrls)
+      const updatedUrls = [...this.ghostUrls]
       const authInstance = new AuthService(this.$fb)
       await authInstance.updateButtonData(this.getUser.uid, updatedUrls)
+      this.updateUrls(updatedUrls)
       this.edit = false
     },
 
@@ -139,9 +146,14 @@ export default {
       this.edit = true
     },
 
+    closeModal() {
+      this.initButtonData()
+      this.edit = false
+    },
+
     async deleteButton() {
       this.ghostUrls.splice(this.index, 1)
-      const updatedUrls = this.ghostUrls.slice()
+      const updatedUrls = [...this.ghostUrls]
       const authInstance = new AuthService(this.$fb)
       this.updateUrls(updatedUrls)
       authInstance.updateButtonData(this.getUser.uid, updatedUrls)

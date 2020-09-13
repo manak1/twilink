@@ -13,15 +13,17 @@
       <div class="flex flex-col">
         <span class="text-gray-500 text-sm">
           <font-awesome-icon icon="link" class="text-sm" />
-          <span type="url">{{ urlData.url }}</span>
+          <span type="url" class="text-overflow">{{ urlData.url }}</span>
         </span>
         <span class="text-gray-500">
           <font-awesome-icon icon="heading" class="text-sm text-gray-500" />
-          <p class="text-gray-500 inline-block text-sm">{{ urlData.text }}</p>
+          <p class="text-gray-500 inline-block text-sm text-overflow">
+            {{ urlData.text }}
+          </p>
         </span>
       </div>
     </div>
-    <div class="flex absolute right-0 bottom-0 p-2 space-x-1">
+    <div class="flex absolute right-0 c-buttons p-2 space-x-1">
       <a
         href="#"
         class="border text-xs py-1 px-2 hover:bg-gray-100 rounded inline-block"
@@ -77,8 +79,8 @@ export default {
 }
 
 .c-buttons {
-  right: 5px;
-  bottom: 5px;
+  right: 0;
+  bottom: -5px;
 }
 
 .uiUrl {
@@ -92,5 +94,9 @@ export default {
 
 .c-edit {
   transition: all 0.3s ease-in;
+}
+
+.text-overflow {
+  text-overflow: ellipsis;
 }
 </style>

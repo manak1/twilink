@@ -8,7 +8,7 @@
         <a
           href="#"
           :class="iconButtonClass"
-          :disabled="$v.dummyData.$invalid"
+          :disabled="isDissabled"
           class="c-button text-white px-2 py-2 text-sm rounded-lg"
           @click.prevent="handleSubmit"
         >
@@ -17,7 +17,6 @@
         </a>
       </div>
     </div>
-    <h2>{{ mode }}</h2>
     <div class="px-4 mt-3 flex w-full space-x-4">
       <div class="w-16">
         <img :src="getImage" class="rounded-full" alt="" />
@@ -111,25 +110,32 @@ export default {
     getImage() {
       return this.getUser.icon.replace('_normal', '_bigger')
     },
+    isDissabled() {
+      if (this.$v.dummyData.$invalid) {
+        return true
+      }
+      if (!this.$v.$anyDirty) {
+        return true
+      }
+      return false
+    },
     iconUrlClass() {
       return {
         'c-invalid':
           this.$v.dummyData.url.$invalid && this.$v.dummyData.url.$dirty,
-        'c-valid':
-          !this.$v.dummyData.url.$invalid && this.$v.dummyData.url.$dirty,
+        'c-valid': !this.$v.dummyData.url.$invalid,
       }
     },
     iconTextClass() {
       return {
         'c-invalid':
           this.$v.dummyData.text.$invalid && this.$v.dummyData.text.$dirty,
-        'c-valid':
-          !this.$v.dummyData.text.$invalid && this.$v.dummyData.text.$dirty,
+        'c-valid': !this.$v.dummyData.text.$invalid,
       }
     },
     iconButtonClass() {
       return {
-        'c-button__disabled': this.$v.dummyData.$invalid,
+        'c-button__disabled': this.isDissabled,
       }
     },
   },

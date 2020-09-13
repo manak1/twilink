@@ -14,15 +14,7 @@ export const mutations = {
     state.user = null
   },
   updateUrls(state, urls) {
-    alert('updated urls')
     state.user.urls = urls
-  },
-  addUrl(state) {
-    state.user.urls.push({
-      id: Math.random().toString(36).substr(0, 32),
-      url: '',
-      text: 'おっすらおらボタン',
-    })
   },
 }
 
