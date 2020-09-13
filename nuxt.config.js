@@ -60,7 +60,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['nuxt-fontawesome', '@nuxt/content'],
+  modules: ['nuxt-fontawesome'],
   fontawesome: {
     imports: [
       {
