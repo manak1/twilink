@@ -106,8 +106,8 @@ export default {
           name: 'description',
           content: `@${this.user.id}さんのリンク集`,
         },
-        { hid: 'og:type', property: 'og:type', content: this.meta.type },
-        { hid: 'og:title', property: 'og:title', content: this.meta.title },
+        { hid: 'og:type', property: 'og:type', content: '' },
+        { hid: 'og:title', property: 'og:title', content: '' },
         {
           hid: 'og:description',
           property: 'og:description',
