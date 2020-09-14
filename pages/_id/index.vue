@@ -97,6 +97,27 @@ export default {
       }
     },
   },
+  head() {
+    return {
+      title: `@${this.user.id}のリンク集 | TwiLink`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `@${this.user.id}さんのリンク集`,
+        },
+        { hid: 'og:type', property: 'og:type', content: this.meta.type },
+        { hid: 'og:title', property: 'og:title', content: this.meta.title },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: `@${this.user.id}さんのリンク集。TwiLinkであなただけのリンク集を作成しよう！`,
+        },
+        { hid: 'og:url', property: 'og:url', content: '' },
+        { hid: 'og:image', property: 'og:image', content: '' },
+      ],
+    }
+  },
 }
 </script>
 

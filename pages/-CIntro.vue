@@ -8,12 +8,7 @@
         class="w-2/3 mx-auto"
       />
     </figure>
-    <!--  <p class="mt-2">
-        Twitterのプロフィールにいろんなリンクを貼りたいけど、ごちゃごちゃしちゃう(
-        ;∀;)！！<br />そんな貴方の為にあるアプリです。
-      </p>
-      <p>シンプルにリンクは一つだけ！あなただけのリンク集をつくろう！！</p> -->
-    <p class="mt-6 px-3 text-sm mx-auto leading-6">
+    <p class="mt-6 px-3 text-sm mx-auto text-center leading-6">
       リンクをたくさん貼るとごちゃごちゃしがちな<br />
       Twitterプロフィールをシンプルにリンク1つで<br />
       まとめることができるサービスです。
