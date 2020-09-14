@@ -1,9 +1,20 @@
 templates: 
   - title: シンプル
-    class: l-dark
+    class: l-simple
+    applyColor: true
 
-  - title: ラベル
+  - title: ダーク
+    class: l-dark
+    applyColor: false
+
+  - title: ラベル風
     class: l-label
+    applyColor: true
 
   - title: インスタ風
     class: l-insta
+    applyColor: false
+
+  - title: ニューモ
+    class: l-neumor
+    applyColor: false

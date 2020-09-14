@@ -1,14 +1,20 @@
 <template>
-  <div v-if="getUser" class="l-insta px-5 pt-4" style="min-height: 90vh">
+  <div
+    v-if="getUser"
+    class="px-5 pt-4"
+    :class="getUser.template"
+    style="min-height: 90vh"
+    :style="applyBackgroundColor(applyColor)"
+  >
     <img
       :src="getImage"
-      class="rounded-full h-24 mx-auto"
+      class="rounded-full h-24 mx-auto c-icon"
       :alt="`${getUser.name}のアイコン`"
     />
-    <h2 class="text-center mt-2 text-white">@{{ getUser.name }}</h2>
+    <h2 class="text-center c-title mt-2 text-white">@{{ getUser.name }}</h2>
     <ul class="test-ui space-y-4 mt-4">
       <li v-for="(url, index) in getUser.urls" :key="index">
-        <UiLinkButton :url-data="url" />
+        <UiLinkButton :url-data="url" :style="applyBorderColor(applyColor)" />
       </li>
     </ul>
   </div>
@@ -16,7 +22,14 @@
 
 <script>
 import { userMapper } from '@/store/user'
+import { templates } from '@/static/api/templates.json'
 export default {
+  data() {
+    return {
+      applyColor: false,
+      templates: templates,
+    }
+  },
   layout: 'project',
   computed: {
     ...userMapper.mapGetters(['getUser']),
@@ -24,8 +37,40 @@ export default {
       return this.getUser.icon.replace('_normal', '')
     },
   },
+  mounted() {
+    const template = this.templates.filter((template) => {
+      if (template.class === this.getUser.template) {
+        return template.applyColor
+      } else {
+        return false
+      }
+    })
+    if (template.length >= 1) {
+      this.applyColor = template[0].applyColor
+    }
+  },
   methods: {
     ...userMapper.mapActions(['relogin']),
+    applyBorderColor(applyColor) {
+      if (!applyColor) {
+        return
+      }
+      return {
+        'border-color': this.getUser.color,
+        color: this.getUser.color,
+      }
+    },
+
+    applyBackgroundColor(applyColor) {
+      if (!applyColor) {
+        return
+      }
+      let colorList = this.getUser.color.split(',')
+      colorList[3] = colorList[3].replace('1', '0.6')
+      return {
+        'background-color': colorList.join(','),
+      }
+    },
   },
 }
 </script>

@@ -1,26 +1,28 @@
 <template>
   <div
     v-if="user"
-    class="container min-h-screen l-insta mx-auto text-center pt-4 px-5"
+    class="container min-h-screen mx-auto text-center pt-4 px-5"
+    :class="user.template"
+    :style="applyBackgroundColor(applyColor)"
   >
     <div class="flex flex-col-reverse">
-      <h2 class="mt-2 c-title">
+      <h2 class="mt-2 c-title" :style="applyTextColor(applyColor)">
         <a
-          class="hover:color-blue-300"
+          class="hover:color-blue-300 c-title"
           :href="`https://twitter.com/${user.id}`"
         >
           @{{ user.id }}
         </a>
       </h2>
       <img
-        class="border rounded-full h-24 mx-auto"
+        class="border c-icon rounded-full h-24 mx-auto"
         :src="getImage"
         :alt="`${user.name}のアイコン`"
       />
     </div>
     <ul class="space-y-4 pt-6">
       <li v-for="(url, index) in user.urls" :key="index">
-        <UiLinkButton :url-data="url" />
+        <UiLinkButton :style="applyBorderColor(applyColor)" :url-data="url" />
       </li>
     </ul>
   </div>
@@ -28,21 +30,63 @@
 
 <script>
 import { AuthService } from '@/service/AuthService'
+import { templates } from '@/static/api/templates.json'
 export default {
   layout: 'user',
   async asyncData({ app, params, redirect }) {
     const authInstance = new AuthService(app.$fb)
     const user = await authInstance.getUserById(params.id)
     if (user) {
+      const applyColor = templates.filter((template) => {
+        if (template.class === user.template) {
+          return template.applyColor
+        }
+      })
       return {
         user,
+        applyColor: applyColor[0].applyColor,
       }
     }
     return redirect('/404')
   },
+  data() {
+    return {
+      templates: templates,
+    }
+  },
   computed: {
     getImage() {
       return this.user.icon.replace('_normal', '')
+    },
+  },
+  methods: {
+    applyBorderColor(applyColor) {
+      if (!applyColor) {
+        return
+      }
+      return {
+        'border-color': this.user.color,
+        color: this.user.color,
+      }
+    },
+
+    applyTextColor(applyColor) {
+      if (!applyColor) {
+        return {
+          color: this.user.color,
+        }
+      }
+    },
+
+    applyBackgroundColor(applyColor) {
+      if (!applyColor) {
+        return
+      }
+      let colorList = this.user.color.split(',')
+      colorList[3] = colorList[3].replace('1', '0.6')
+      return {
+        'background-color': colorList.join(','),
+      }
     },
   },
 }

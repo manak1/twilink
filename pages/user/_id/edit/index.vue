@@ -19,7 +19,11 @@
       </draggable>
     </ul>
     <div class="fixed w-full text-right pr-5 container c-addButton">
-      <UiButton text="URLを追加する" @clickEvent="edit = !edit" />
+      <UiButton
+        text="URLを追加する"
+        :style="`background-color:${getUser.color}`"
+        @clickEvent="edit = !edit"
+      />
     </div>
     <transition
       enter-active-class="animated c-fade__in"
@@ -120,6 +124,7 @@ export default {
       this.ghostUrls[this.index] = buttonData
       const updatedUrls = [...this.ghostUrls]
       const autnInstance = new AuthService(this.$fb)
+      this.updateUrls(updatedUrls)
       await autnInstance.updateButtonData(this.getUser.uid, updatedUrls)
       this.edit = false
       this.index = null

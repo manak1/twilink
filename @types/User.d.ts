@@ -12,6 +12,7 @@ declare global {
     id:string
     urls: Url[]
     color: string
+    template: string
   }
 
   interface AuthUser {
