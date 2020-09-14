@@ -103,8 +103,4 @@ export default {
 .c-edit {
   transition: all 0.3s ease-in;
 }
-
-.text-overflow {
-  text-overflow: ellipsis;
-}
 </style>
