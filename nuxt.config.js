@@ -25,6 +25,34 @@ export default {
         content:
           'TwiLink(ツイリンク)。リンクをたくさん貼るとごちゃごちゃしがちなTwitterプロフィールをシンプルにリンク一つでまとめることができるサイトです。自分だけのリンク集を作成しよう！。',
       },
+      {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        content: 'TwiLink(ツイリンク)',
+      },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'TwiLinkで自分だけのリンク集を作ろう！',
+      },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://twilink.click',
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content:
+          'TwiLink(ツイリンク)。リンクをたくさん貼るとごちゃごちゃしがちなTwitterプロフィールをシンプルにリンク一つでまとめることができるサイトです。自分だけのリンク集を作成しよう！。',
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: 'https://twilink/images/ogp/ogp.jpg',
+      },
+      { name: 'twitter:card', content: 'summary' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
