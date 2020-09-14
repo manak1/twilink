@@ -13,7 +13,7 @@
         <nuxt-link
           class="block py-3"
           :to="pathCreate(index, link.path)"
-          :class="activeClass(link.path, index)"
+          :style="activeClass(link.path, index)"
         >
           <font-awesome-icon :icon="link.icon" class="text-2xl" />
         </nuxt-link>
@@ -51,19 +51,29 @@ export default {
       ],
     }
   },
+  computed: {
+    applyColor() {
+      return {
+        'background-color': this.user.color,
+      }
+    },
+  },
   methods: {
     activeClass(path, index) {
       const splitedUrl = this.$route.path.split('/')
       const splitedPath = path.split('/')
-      if (index === 1) {
+      if (index === 1 && splitedUrl[1] === 'user') {
         return {
-          'l-footerBox__active': splitedUrl[1] === 'user',
+          color: this.user.color,
         }
       }
-      return {
-        'l-footerBox__active':
-          `/${splitedUrl[splitedUrl.length - 1]}` ===
-          `/${splitedPath[splitedPath.length - 1]}`,
+      if (
+        `/${splitedUrl[splitedUrl.length - 1]}` ===
+        `/${splitedPath[splitedPath.length - 1]}`
+      ) {
+        return {
+          color: this.user.color,
+        }
       }
     },
     pathCreate(index, path) {

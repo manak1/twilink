@@ -12,12 +12,13 @@
         {{ link.text }}
       </nuxt-link>
     </li>
-    <li :class="activeBarSp" class="sm:hidden"></li>
-    <li :class="activeBar" class="hidden sm:block"></li>
+    <li :class="activeBarSp" :style="applyColor" class="sm:hidden"></li>
+    <li :class="activeBar" :style="applyColor" class="hidden sm:block"></li>
   </ul>
 </template>
 
 <script>
+import { userMapper } from '@/store/user'
 export default {
   data() {
     return {
@@ -42,6 +43,7 @@ export default {
     }
   },
   computed: {
+    ...userMapper.mapGetters(['getUser']),
     activeBar() {
       return {
         switcherBar: true,
@@ -61,6 +63,13 @@ export default {
     getPage() {
       const urls = this.$route.path.split('/')
       return urls[urls.length - 1]
+    },
+
+    applyColor() {
+      return {
+        'background-color': this.getUser.color,
+        color: 'red',
+      }
     },
   },
 }

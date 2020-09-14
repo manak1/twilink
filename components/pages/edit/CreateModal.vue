@@ -2,7 +2,11 @@
   <UiModal full>
     <div class="c-modal py-3 px-5 flex justify-between border-b">
       <a href="#" class="block" @click.prevent="$emit('close')">
-        <font-awesome-icon class="c-icon text-xl" icon="times" />
+        <font-awesome-icon
+          class="c-icon text-xl"
+          :style="applyColor"
+          icon="times"
+        />
       </a>
       <div>
         <a
@@ -10,6 +14,7 @@
           :class="iconButtonClass"
           :disabled="isDissabled"
           class="c-button text-white px-2 py-2 text-sm rounded-lg"
+          :style="applyBackColor"
           @click.prevent="handleSubmit"
         >
           <span v-if="mode === 'edit'">URLを更新する</span>
@@ -21,12 +26,12 @@
       <div class="w-16">
         <img :src="getImage" class="rounded-full" alt="" />
       </div>
-      <form class="w-full space-y-2 pt-2">
+      <form class="w-full space-y-2 pt-2 overflow-hidden">
         <div class="flex space-x-1">
           <label for="button_url">
             <font-awesome-icon
               class="c-icon__head"
-              :class="iconUrlClass"
+              :style="applyUrlColor"
               icon="link"
             />
           </label>
@@ -43,7 +48,7 @@
           <label for="button_text">
             <font-awesome-icon
               class="c-icon__head"
-              :class="iconTextClass"
+              :style="applyTextColor"
               icon="heading"
             />
           </label>
@@ -59,7 +64,11 @@
         <div class="pt-8 text-sm">
           <div class="pb-12">
             <p class="text-left text-sm">ボタンのイメージ</p>
-            <UiPreviewButton v-if="dummyData" :text="dummyData.text" />
+            <UiPreviewButton
+              v-if="dummyData"
+              :style="applyBorderColor"
+              :text="dummyData.text"
+            />
           </div>
           <hr />
           <ul v-if="dummyData" class="flex">
@@ -73,9 +82,15 @@
                 <font-awesome-icon
                   v-if="dummyData.options.visible"
                   class="c-icon"
+                  :style="applyColor"
                   icon="eye"
                 />
-                <font-awesome-icon v-else class="c-icon" icon="eye-slash" />
+                <font-awesome-icon
+                  v-else
+                  class="c-icon"
+                  :style="applyColor"
+                  icon="eye-slash"
+                />
               </a>
             </li>
           </ul>
@@ -126,6 +141,33 @@ export default {
         'c-valid': !this.$v.dummyData.url.$invalid,
       }
     },
+    applyUrlColor() {
+      if (this.$v.dummyData.url.$invalid && this.$v.dummyData.url.$dirty) {
+        return {
+          color: 'red',
+        }
+      }
+      if (!this.$v.dummyData.url.$invalid) {
+        return {
+          color: this.getUser.color,
+        }
+      }
+      return ''
+    },
+
+    applyTextColor() {
+      if (this.$v.dummyData.text.$invalid && this.$v.dummyData.text.$dirty)
+        return {
+          color: 'red',
+        }
+      if (!this.$v.dummyData.text.$invalid) {
+        return {
+          color: this.getUser.color,
+        }
+      }
+      return ''
+    },
+
     iconTextClass() {
       return {
         'c-invalid':
@@ -138,7 +180,25 @@ export default {
         'c-button__disabled': this.isDissabled,
       }
     },
+    applyColor() {
+      return {
+        color: this.getUser.color,
+      }
+    },
+
+    applyBackColor() {
+      return {
+        'background-color': this.getUser.color,
+      }
+    },
+
+    applyBorderColor() {
+      return {
+        'border-color': this.getUser.color,
+      }
+    },
   },
+
   mounted() {
     this.dummyData = { ...this.buttonData }
   },
@@ -178,6 +238,7 @@ export default {
 
 .c-icon__head {
   color: rgb(85, 85, 85);
+  transition: 0.2s ease-in;
 }
 
 .c-invalid {
@@ -197,5 +258,9 @@ export default {
 
 .c-button {
   background-color: #1da1f2;
+}
+
+.c-transition {
+  transition: 0.2s ease-in;
 }
 </style>

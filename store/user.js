@@ -16,6 +16,12 @@ export const mutations = {
   updateUrls(state, urls) {
     state.user.urls = urls
   },
+  updateColor(state, color) {
+    state.user.color = color
+  },
+  updateTemplate(state, template) {
+    state.user.template = template
+  },
 }
 
 export const getters = {

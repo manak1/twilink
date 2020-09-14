@@ -24,7 +24,8 @@ export class AuthService {
         name: user.user.displayName,
         id: user.additionalUserInfo.username,
         icon: user.user.photoURL,
-        color: '#1da2f1',
+        color: 'rgba(29,162,241,1)',
+        template: 'l-simple',
         urls: [] as any
       }
       await this.$fb.firestore().collection('users').doc(user.user.uid).set({
@@ -60,6 +61,18 @@ export class AuthService {
   async updateButtonData(uid: string, urls: any) {
     await this.$fb.firestore().collection('users').doc(uid).update({
       "urls": urls
+    })
+  }
+
+  async updateColor(uid:string,color:string) {
+    await this.$fb.firestore().collection('users').doc(uid).update( {
+      "color":color
+    })
+  }
+
+  async updateTemplate(uid:string,template:string) {
+    await this.$fb.firestore().collection('users').doc(uid).update( {
+      "template":template
     })
   }
 }
