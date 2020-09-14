@@ -82,7 +82,7 @@ export default {
 
 .switcherBar {
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   left: 95px;
   width: 50px;
   height: 2px;
@@ -104,7 +104,7 @@ export default {
 
 .switcherBarSp {
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   left: 46px;
   width: 50px;
   height: 2px;

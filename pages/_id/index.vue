@@ -36,15 +36,23 @@ export default {
   async asyncData({ app, params, redirect }) {
     const authInstance = new AuthService(app.$fb)
     const user = await authInstance.getUserById(params.id)
+    let applyColor = false
     if (user) {
-      const applyColor = templates.filter((template) => {
+      const applyColorList = templates.filter((template) => {
         if (template.class === user.template) {
           return template.applyColor
+        } else {
+          return false
         }
       })
+
+      if (applyColorList.length >= 1) {
+        console.log(applyColorList)
+        applyColor = applyColorList[0].applyColor
+      }
       return {
         user,
-        applyColor: applyColor[0].applyColor,
+        applyColor,
       }
     }
     return redirect('/404')

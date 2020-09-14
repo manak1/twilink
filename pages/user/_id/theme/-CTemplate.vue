@@ -72,7 +72,7 @@ export default {
   },
   data() {
     return {
-      selected: 'l-insta',
+      selected: 'l-simple',
     }
   },
   computed: {
@@ -84,6 +84,9 @@ export default {
         }
       }
     },
+  },
+  mounted() {
+    this.selected = this.getUser.template
   },
   methods: {
     applyBorderColor(applyColor) {
