@@ -41,12 +41,12 @@ export default {
   components: {
     CTemplate,
   },
-  async asyncData({ $content }) {
+  /*   async asyncData({ $content }) {
     const templates = await $content('templates').fetch()
     return {
       templates: templates[0].templates,
     }
-  },
+  }, */
   data() {
     return {
       colorOptions: [
