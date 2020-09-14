@@ -50,7 +50,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://twilink/images/ogp/ogp.jpg',
+        content: 'https://twilink.click/images/ogp/ogp.jpg',
       },
       { name: 'twitter:card', content: 'summary' },
     ],
