@@ -52,7 +52,7 @@ export default {
         property: 'og:image',
         content: 'https://twilink.click/images/ogp/ogp.jpg',
       },
-      { name: 'twitter:card', content: 'summary' },
+      { name: 'twitter:card', content: 'summary_large_image' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
