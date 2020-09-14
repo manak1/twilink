@@ -4,7 +4,13 @@
       class="container px-5 py-1 border-b mx-auto flex items-center justify-between"
     >
       <nuxt-link to="/">
-        <h1 class="block">TwiLink</h1>
+        <h1 class="block">
+          <img
+            class="w-20 h-auto"
+            src="@/assets/images/layouts/header/logo.svg"
+            alt="TwiLink"
+          />
+        </h1>
       </nuxt-link>
       <div v-if="!user">
         <ui-login-button text="ログイン" @click-event="login" />

@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="user"
-    class="container min-h-screen mx-auto text-center pt-4 px-5"
+    class="container relative min-h-screen mx-auto text-center pt-4 px-5"
     :class="user.template"
     :style="applyBackgroundColor(applyColor)"
   >
@@ -25,6 +25,19 @@
         <UiLinkButton :style="applyBorderColor(applyColor)" :url-data="url" />
       </li>
     </ul>
+    <figure
+      class="absolute bottom-0 pb-6"
+      style="left: 50%; transform: translateX(-50%)"
+    >
+      <nuxt-link to="/">
+        <small class="text-white text-xs mb-2 block">hosted with 🐧 by </small>
+        <img
+          class="w-32 h-auto"
+          src="@/assets/images/layouts/header/logo.svg"
+          alt="TwiLink(ツイリンク)ロゴ"
+        />
+      </nuxt-link>
+    </figure>
   </div>
 </template>
 
