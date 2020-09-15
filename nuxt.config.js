@@ -88,7 +88,11 @@ export default {
     '@nuxtjs/tailwindcss',
     '@nuxtjs/dotenv',
     '@nuxt/typescript-build',
+    '@nuxtjs/google-analytics',
   ],
+  googleAnalytics: {
+    id: 'UA-141711507101',
+  },
   /*
    ** Nuxt.js modules
    */

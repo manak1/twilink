@@ -10,8 +10,8 @@
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint:style": "stylelint **/*.{vue,css} --ignore-path .gitignore",
     "lint": "npm run lint:js && npm run lint:style",
-    "doc": "run-p doc:*",  
-    "doc:templates": "json-refs resolve -w documents/templates/templates.yml > static/api/templates.json" 
+    "doc": "run-p doc:*",
+    "doc:templates": "json-refs resolve -w documents/templates/templates.yml > static/api/templates.json"
   },
   "lint-staged": {
     "*.{js,vue}": "eslint",
@@ -28,6 +28,7 @@
     "@fortawesome/vue-fontawesome": "^0.1.10",
     "@nuxt/content": "^1.8.1",
     "@nuxtjs/dotenv": "^1.4.1",
+    "@nuxtjs/google-analytics": "^2.4.0",
     "@typescript-eslint/parser": "^3.10.1",
     "animate.css": "^4.1.1",
     "firebase": "^7.19.1",
