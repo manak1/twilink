@@ -20,6 +20,11 @@ export default {
       lang: 'ja',
     },
     meta: [
+      {
+        name: 'google-site-vertification',
+        content:
+          'google-site-verification=qmp4-89AZhAo6vkmT0NgQJzFMPkIuAUpLs1yqDJMUU0',
+      },
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
