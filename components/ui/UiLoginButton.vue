@@ -1,7 +1,7 @@
 <template>
   <a
     href="#"
-    class="inline-block bg-blue text-white pr-2 py-2 shadow rounded-md"
+    class="inline-block bg-blue text-white pr-3 py-2 shadow rounded-md"
     @click.prevent="$emit('click-event')"
   >
     <div class="flex items-center">
