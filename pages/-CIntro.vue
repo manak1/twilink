@@ -1,5 +1,5 @@
 <template>
-  <section class="mx-auto px-5 pb-4">
+  <section class="mx-auto px-5 pb-24">
     <h2 class="text-center text-xl mt-4">TwiLinkとは？</h2>
     <figure class="pt-2">
       <img

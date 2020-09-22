@@ -1,20 +1,25 @@
 <template>
-  <ul
-    class="flex relative container mx-auto justify-center space-x-6 px-4 border-b"
-  >
-    <li
-      v-for="(link, index) in links"
-      :key="index"
-      class="text-sm relative"
-      :class="{ activeLink: $route.path.includes(link.path) }"
+  <div class="border-b">
+    <ul
+      class="flex relative container l-switcher mx-auto justify-center space-x-6 px-4"
     >
-      <nuxt-link :to="link.path" class="block pt-1 pb-2">
-        {{ link.text }}
-      </nuxt-link>
-    </li>
-    <li :class="activeBarSp" :style="applyColor" class="sm:hidden"></li>
-    <li :class="activeBar" :style="applyColor" class="hidden sm:block"></li>
-  </ul>
+      <li
+        v-for="(link, index) in links"
+        :key="index"
+        class="text-sm relative"
+        :class="{ activeLink: $route.path.includes(link.path) }"
+      >
+        <nuxt-link :to="link.path" class="block px-2 pt-1 pb-2">
+          <font-awesome-icon
+            class="text-xl"
+            :style="applyActiveIcon(link.path)"
+            :icon="link.icon"
+          ></font-awesome-icon>
+        </nuxt-link>
+      </li>
+      <li :class="activeBar" :style="applyColor"></li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -26,18 +31,22 @@ export default {
         {
           path: 'preview',
           text: '確認',
+          icon: 'eye',
         },
         {
           path: 'edit',
           text: '編集',
+          icon: 'pen',
         },
         {
           path: 'theme',
           text: 'テーマ',
+          icon: 'palette',
         },
         {
           path: 'share',
           text: 'シェア',
+          icon: 'share',
         },
       ],
     }
@@ -52,24 +61,25 @@ export default {
         switcherBar__share: this.getPage === 'share',
       }
     },
-    activeBarSp() {
-      return {
-        switcherBarSp: true,
-        switcherBarSp__edit: this.getPage === 'edit',
-        switcherBarSp__theme: this.getPage === 'theme',
-        switcherBarSp__share: this.getPage === 'share',
-      }
-    },
     getPage() {
       const urls = this.$route.path.split('/')
       return urls[urls.length - 1]
     },
-
     applyColor() {
       return {
         'background-color': this.getUser.color,
         color: 'red',
       }
+    },
+  },
+  methods: {
+    applyActiveIcon(path) {
+      if (path === this.getPage) {
+        return {
+          color: this.getUser.color,
+        }
+      }
+      return ''
     },
   },
 }
@@ -83,7 +93,7 @@ export default {
 .switcherBar {
   position: absolute;
   bottom: -2px;
-  left: 95px;
+  left: 20px;
   width: 50px;
   height: 2px;
   background-color: #1da1f2;
@@ -91,36 +101,18 @@ export default {
 }
 
 .switcherBar__edit {
-  left: 150px;
+  left: 82px;
 }
 
 .switcherBar__theme {
-  left: 210px;
+  left: 142px;
 }
 
 .switcherBar__share {
-  left: 275px;
+  left: 202px;
 }
 
-.switcherBarSp {
-  position: absolute;
-  bottom: -2px;
-  left: 46px;
-  width: 50px;
-  height: 2px;
-  background-color: #1da1f2;
-  transition: 0.5s cubic-bezier(0.865, 0.2, 0.15, 0.86);
-}
-
-.switcherBarSp__edit {
-  left: 97px;
-}
-
-.switcherBarSp__theme {
-  left: 157px;
-}
-
-.switcherBarSp__share {
-  left: 223px;
+.l-switcher {
+  max-width: 320px;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="mx-auto bg-gray-100">
     <div
-      class="min-h-screen flex flex-col container bg-white mx-auto border-r border-l border-t"
+      class="min-h-screen flex flex-col container bg-white mx-auto md:border-r md:border-l md:border-t"
     >
       <l-header :user="getUser" />
       <Nuxt />

@@ -13,7 +13,7 @@
       <div class="flex flex-col">
         <span class="text-gray-500 text-sm">
           <font-awesome-icon icon="link" class="text-sm" />
-          <span type="url" class="text-overflow">{{ urlData.url }}</span>
+          <span type="url" class="text-overflow">{{ trimUrl }}</span>
         </span>
         <span class="text-gray-500">
           <font-awesome-icon icon="heading" class="text-sm text-gray-500" />
@@ -23,23 +23,21 @@
         </span>
       </div>
     </div>
-    <div class="flex absolute right-0 c-buttons p-2 space-x-1">
+    <div class="flex c-url__options absolute c-buttons space-x-1">
       <a
         href="#"
-        class="border text-xs py-1 px-2 hover:bg-gray-100 rounded inline-block"
+        class="px-1 text-xshover:bg-gray-100 rounded inline-block"
         @click.prevent="$emit('edit', index)"
       >
         <font-awesome-icon class="text-xs" icon="pen" />
-        編集
       </a>
 
       <a
         href="#"
-        class="border text-xs py-1 px-2 hover:bg-gray-100 rounded inline-block"
+        class="text-xs py-1 px-1 hover:bg-gray-100 rounded inline-block"
         @click.prevent="$emit('delete')"
       >
         <font-awesome-icon class="text-xs" icon="trash" />
-        削除
       </a>
     </div>
   </div>
@@ -69,6 +67,13 @@ export default {
       }
       return this.urlData.text
     },
+
+    trimUrl() {
+      if (this.urlData.url.length >= 30) {
+        return this.urlData.url.slice(0, 26) + '...'
+      }
+      return this.urlData.url
+    },
   },
   mounted() {
     this.dummyUrlData = { ...this.urlData }
@@ -89,6 +94,11 @@ export default {
 .c-buttons {
   right: 0;
   bottom: -5px;
+}
+
+.c-url__options {
+  bottom: 0;
+  right: 10px;
 }
 
 .uiUrl {

@@ -71,7 +71,7 @@
             />
           </div>
           <hr />
-          <ul v-if="dummyData" class="flex">
+          <!-- <ul v-if="dummyData" class="flex">
             <li class="pt-2">
               <a
                 href="#"
@@ -93,7 +93,7 @@
                 />
               </a>
             </li>
-          </ul>
+          </ul> -->
         </div>
       </form>
     </div>
@@ -102,7 +102,7 @@
 
 <script>
 import { userMapper } from '@/store/user'
-import { required, url } from 'vuelidate/lib/validators'
+import { required, url, maxLength } from 'vuelidate/lib/validators'
 
 export default {
   props: {
@@ -225,6 +225,7 @@ export default {
       },
       text: {
         required,
+        maxlength: maxLength(30),
       },
     },
   },
