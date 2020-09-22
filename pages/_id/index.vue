@@ -113,7 +113,7 @@ export default {
   head() {
     console.log(this.getImage)
     console.log(
-      `https://twilink-ogp-3recd8om0.vercel.app/api/ogp?title=${this.user.name}のリンク集&url=${this.getImage}`
+      `${process.env.apiURl}?title=${this.user.name}のリンク集&url=${this.getImage}`
     )
     return {
       title: `@${this.user.id}のリンク集 | TwiLink`,
@@ -128,7 +128,7 @@ export default {
         {
           hid: 'og:description',
           property: 'og:description',
-          content: `@${this.user.id}さんのリンク集。TwiLinkであなただけのリンク集を作成しよう！`,
+          content: `リンクをたくさん貼るとごちゃごちゃしがちなTwitterプロフィールをシンプルにリンク一つでまとめることができるサイトです。自分だけのリンク集を作成しよう！`,
         },
         {
           hid: 'og:url',
@@ -138,7 +138,7 @@ export default {
         {
           name: 'twitter:title',
           hid: 'twitter:title',
-          content: `@${this.user.id}さんのリンク集。TwiLinkであなただけのリンク集を作成しよう！`,
+          content: `@${this.user.id}さんのリンク集 | TwiLink`,
         },
         {
           hid: 'og:image',
