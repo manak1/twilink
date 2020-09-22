@@ -126,8 +126,22 @@ export default {
           property: 'og:description',
           content: `@${this.user.id}さんのリンク集。TwiLinkであなただけのリンク集を作成しよう！`,
         },
-        { hid: 'og:url', property: 'og:url', content: '' },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: `https://twilink.click/${this.user.id}`,
+        },
         { hid: 'og:image', property: 'og:image', content: '' },
+        {
+          name: 'twitter:title',
+          hid: 'twitter:title',
+          content: `@${this.user.id}さんのリンク集。TwiLinkであなただけのリンク集を作成しよう！`,
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: `https://shindan-chart-maker-ogp.manaki.vercel.app/api/ogp?title=${this.user.name}のリンク集&url=${this.user.icon}`,
+        },
       ],
     }
   },
