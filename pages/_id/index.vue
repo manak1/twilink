@@ -140,7 +140,7 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          content: `https://shindan-chart-maker-ogp.manaki.vercel.app/api/ogp?title=${this.user.name}のリンク集&url=${this.getImage}`,
+          content: `https://shindan-chart-maker-ogp.manaki.vercel.app/api/ogp?title=manakiのリンク集&url=https://pbs.twimg.com/profile_images/1280131129257816064/gadQI8qB_400x400.jpg`,
         },
       ],
     }
