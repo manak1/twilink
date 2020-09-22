@@ -131,7 +131,6 @@ export default {
           property: 'og:url',
           content: `https://twilink.click/${this.user.id}`,
         },
-        { hid: 'og:image', property: 'og:image', content: '' },
         {
           name: 'twitter:title',
           hid: 'twitter:title',
