@@ -60,7 +60,6 @@ export default {
       })
 
       if (applyColorList.length >= 1) {
-        console.log(applyColorList)
         applyColor = applyColorList[0].applyColor
       }
       return {
@@ -111,10 +110,6 @@ export default {
     },
   },
   head() {
-    console.log(this.getImage)
-    console.log(
-      `${process.env.apiURl}?title=${this.user.name}のリンク集&url=${this.getImage}`
-    )
     return {
       title: `@${this.user.id}のリンク集 | TwiLink`,
       meta: [
