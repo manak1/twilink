@@ -138,7 +138,7 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          content: `https://twilink-ogp-3recd8om0.vercel.app/api/ogp?title=${this.user.name}のリンク集&url=${this.getImage}`,
+          content: `${process.env.apiUrl}?title=${this.user.name}のリンク集&url=${this.getImage}`,
         },
       ],
     }
