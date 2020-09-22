@@ -111,6 +111,10 @@ export default {
     },
   },
   head() {
+    console.log(this.getImage)
+    console.log(
+      `https://twilink-ogp-3recd8om0.vercel.app/api/ogp?title=${this.user.name}のリンク集&url=${this.getImage}`
+    )
     return {
       title: `@${this.user.id}のリンク集 | TwiLink`,
       meta: [
@@ -139,7 +143,7 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          content: `twilink-ogp-3recd8om0.vercel.app/api/ogp?title=${this.user.name}のリンク集&url=${this.getImage}`,
+          content: `https://twilink-ogp-3recd8om0.vercel.app/api/ogp?title=${this.user.name}のリンク集&url=${this.getImage}`,
         },
       ],
     }
