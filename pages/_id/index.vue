@@ -119,8 +119,8 @@ export default {
           name: 'description',
           content: `@${this.user.id}さんのリンク集`,
         },
-        { hid: 'og:type', property: 'og:type', content: '' },
-        { hid: 'og:title', property: 'og:title', content: '' },
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:site', content: '@mikeanakida' },
         {
           hid: 'og:description',
           property: 'og:description',
