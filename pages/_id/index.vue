@@ -30,7 +30,9 @@
       style="left: 50%; transform: translateX(-50%)"
     >
       <nuxt-link to="/">
-        <small class="text-white text-xs mb-2 block">hosted with 🐧 by </small>
+        <small class="text-white text-xs mb-2 block" style="color: #2ea7e0">
+          hosted with 🐧 by
+        </small>
         <img
           class="w-32 h-auto"
           src="@/assets/images/layouts/header/logo.svg"

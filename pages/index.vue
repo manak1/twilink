@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto">
+  <div class="container mx-auto pb-12">
     <c-intro />
     <c-about />
     <c-cta />

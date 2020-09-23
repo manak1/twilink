@@ -1,6 +1,7 @@
 <template>
-  <div class="bg-red-300 py-20">
-    <ul class="space-y-3">
+  <div class="c-about pt-6 pb-20">
+    <h2 class="text-center font-bold text-xl mt-4">TwiLinkとは？</h2>
+    <ul class="space-y-4 mt-8">
       <li v-for="(chat, index) in script" :key="index">
         <UiCharachter
           :name="chat.name"
@@ -94,8 +95,22 @@ export default {
           text: 'うわお！凄い！おしゃれだね！！！みんなも是非使ってみてね！！',
           right: false,
         },
+        {
+          name: '迷える羊',
+          icon: '/images/intro/sheep.svg',
+          text: 'いろんなおしゃれなテーマがあるよ！',
+          right: true,
+        },
       ],
     }
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.c-about {
+  background-image: url('~assets/images/pages/intro/background.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+</style>

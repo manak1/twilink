@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex item-center justify-between bg-red-300 px-5 items-center pb-4"
+    class="flex item-center justify-between px-5 items-center pb-4"
     :class="directionClass"
   >
     <div
@@ -45,7 +45,7 @@ export default {
     },
     image: {
       type: String,
-      required: true,
+      default: '',
     },
   },
   computed: {
