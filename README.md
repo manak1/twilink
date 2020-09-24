@@ -1,19 +1,31 @@
 
-<img src="./static/images/ogp/ogp.jpg" width="600"/>
+<img src="./assets/images/layouts/header/logo.svg" width="500"/>
+
 # TwiLink(ツイリンク)
 
-TwiLink リンクを沢山貼るとゴチャゴチャしがちなツイッターのプロフィールをURL一つにまとめれるウェブアプリ。
+TwiLinkとは、Twitterのプロフィール欄にリンクを沢山貼りたいけど、ツイッターのプロフィールがゴチャゴチャしてしまう...
+
+<img src="./static/images/intro/screenshot.png" width="300"/>
+
+
+という人に向けて作られたウェブアプリです。以下の画像のような自分だけのリンク集ページを作成する事が出来ます。
+
+<img src="./static/images/intro/screenshot2.png" width="300"/>
+
+↓ 何種類かテーマーを選ぶ事が出来るので、自分に合ったものをお選びください！
+
+<img src="./static/images/intro/screenshot3.png" height="400"/>
+
 
 ## 本番環境
 
 https://twilink.click
 
-## Build Setup
+## 動作確認
 
 ```bash
 # install dependencies
 $ npm install
-
 
 # generate template data
 $ npm run doc
@@ -28,6 +40,4 @@ $ npm run start
 # generate static project
 $ npm run generate
 ```
-
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
-\\
