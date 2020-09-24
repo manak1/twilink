@@ -1,5 +1,5 @@
 
-![img](./src/static/images/ogp/ogp.jpg)
+![img](./static/images/ogp/ogp.jpg)
 # TwiLink(ツイリンク)
 
 TwiLink リンクを沢山貼るとゴチャゴチャしがちなツイッターのプロフィールをURL一つにまとめれるウェブアプリ。
