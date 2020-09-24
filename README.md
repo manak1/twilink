@@ -1,8 +1,12 @@
 
-![img](./static/images/ogp/ogp.jpg)
+<img src="./static/images/ogp/ogp.jpg" width="600"/>
 # TwiLink(ツイリンク)
 
 TwiLink リンクを沢山貼るとゴチャゴチャしがちなツイッターのプロフィールをURL一つにまとめれるウェブアプリ。
+
+## 本番環境
+
+https://twilink.click
 
 ## Build Setup
 
@@ -26,3 +30,4 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+\\
