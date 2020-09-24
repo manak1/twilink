@@ -21,6 +21,13 @@ TwiLinkとは、Twitterのプロフィール欄にリンクを沢山貼りたい
 
 https://twilink.click
 
+
+## 製作者
+
+[manaki (デザイン・開発)](https://twitter.com/mikeanakida)  
+
+[146 (ロゴ作成)](https://twitter.com/zyung_zyung)
+
 ## 動作確認
 
 ```bash
