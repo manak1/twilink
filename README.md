@@ -1,10 +1,18 @@
-# twilink
+
+![img](./src/static/images/ogp/ogp.jpg)
+# TwiLink(ツイリンク)
+
+TwiLink リンクを沢山貼るとゴチャゴチャしがちなツイッターのプロフィールをURL一つにまとめれるウェブアプリ。
 
 ## Build Setup
 
 ```bash
 # install dependencies
 $ npm install
+
+
+# generate template data
+$ npm run doc
 
 # serve with hot reload at localhost:3000
 $ npm run dev
