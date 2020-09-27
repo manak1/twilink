@@ -21,13 +21,9 @@
                   class="rounded-full mx-auto border bg-white w-12"
                   alt="作者のアイコン"
                 />
-                <a
-                  href="https://twitter.com/mikeanakida"
-                  class="text-sm text-left"
-                >
-                  manaki
-                </a>
+                <span> manaki </span>
               </div>
+
               <div class="l-footer__messages relative">
                 <p class="text-sm l-footer__message text-left ml-2">
                   デザイン、開発を担当しました!<br />
@@ -48,42 +44,21 @@
                   alt="作者のアイコン"
                   style="min-width: 48px"
                 />
-                <a
+                <span
                   href="https://twitter.com/mikeanakida"
                   class="text-sm text-left"
                 >
                   146
-                </a>
+                </span>
               </div>
               <div class="l-footer__messages relative">
                 <p class="text-sm l-footer__message text-left ml-2">
-                  デザイン、開発を担当しました!<br />
-                  インターン先探してます！！
+                  ゆるくデザインやってます！！<br />
                 </p>
               </div>
             </a>
           </div>
         </div>
-        <!-- <div class="mt-2">
-          <a href="#" class="flex justify-center items-center block space-x-2">
-            <img
-              src="@/assets/images/layouts/footer/avatar1.svg"
-              alt="作者のアイコン"
-            />
-            <a href="https://twitter.com/zyungzyung" class="text-sm w-24">
-              @zyung_zyung
-            </a>
-          </a>
-        </div> -->
-        <!-- <div>
-          <a href="htpps://twitter.com/mikeanakida">
-            <img
-              src="@/assets/images/layouts/footer/twitter-color.svg"
-              alt="manakiのtwitterアイコン"
-              class="w-12"
-            />
-          </a>
-        </div> -->
       </section>
     </section>
     <div class="mt-4 text-center text-gray-800">
@@ -127,7 +102,7 @@ export default {}
 
   &__message {
     position: relative;
-    top: -15px;
+    top: -10px;
   }
 }
 </style>
