@@ -118,7 +118,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: `@${this.user.id}さんのリンク集`,
+          content: `@${this.user.id}さんのリンク集 TwiLinkは自分だけのリンク集を作成することが出来るアプリです。自分だけのリンク集を作成しよう！`,
         },
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:site', content: '@mikeanakida' },
@@ -135,7 +135,7 @@ export default {
         {
           name: 'twitter:title',
           hid: 'twitter:title',
-          content: `@${this.user.id}さんのリンク集 | TwiLink`,
+          content: `${this.user.name}さんのリンク集 | TwiLink`,
         },
         {
           hid: 'og:image',
