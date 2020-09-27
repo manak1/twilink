@@ -1,5 +1,5 @@
 <template>
-  <section class="c-cta pt-4">
+  <section class="c-cta py-4">
     <div class="text-center mt-8">
       <h3 class="font-bold text-xl">さっそく作ってみよう！！</h3>
       <figure class="mt-10 c-cta__icon relative block mx-auto mb-4">
