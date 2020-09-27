@@ -42,11 +42,15 @@ export const actions = {
   async relogin({ commit }) {
     this.$fb.auth().onAuthStateChanged(async (user) => {
       if (!user) {
+        console.log('user not found!!')
         return
       }
       const uid = user.uid
       const authInstance = new AuthService(this.$fb)
       const userData = await authInstance.getUser(uid)
+      if (!userData) {
+        return
+      }
       userData.uid = uid
       this.commit('loaded/updateLoaded')
       commit('setUser', userData)
