@@ -14,9 +14,6 @@ export default {
   computed: {
     ...userMapper.mapGetters(['getUser']),
   },
-  mounted() {
-    this.relogin()
-  },
   methods: {
     ...userMapper.mapActions(['relogin']),
   },

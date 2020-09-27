@@ -7,7 +7,7 @@
       <Nuxt />
       <div class="flex-grow"></div>
       <l-footer />
-      <l-footer-box :user="getUser" />
+      <l-footer-box v-if="getUser" :user="getUser" />
     </div>
   </div>
 </template>
