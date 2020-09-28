@@ -5,9 +5,9 @@
     </h2>
     <figure class="mt-8">
       <img
-        src="@/assets/images/pages/intro/undraw_share_link_qtxe.svg"
+        src="@/assets/images/pages/intro/intro.png"
         alt="リンクを表現する画像"
-        class="w-2/3 mx-auto"
+        class="h-64 mx-auto"
       />
     </figure>
     <p class="mt-8 px-3 text-sm mx-auto text-center leading-7">

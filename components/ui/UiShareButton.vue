@@ -1,16 +1,37 @@
 <template>
-  <a v-if="getUser" :href="snsLink" :class="snsClass">
-    <!-- 動的にアイコンの指定が[]だとできない泣 -->
-    <span class="mr-1">
-      <font-awesome-icon v-if="type === 'twitter'" :icon="['fab', 'twitter']" />
-      <font-awesome-icon v-if="type === 'line'" :icon="['fab', 'line']" />
-      <font-awesome-icon
-        v-if="type === 'facebook'"
-        :icon="['fab', 'facebook']"
-      />
-    </span>
-    <slot />
-  </a>
+  <span>
+    <a
+      v-if="getUser && type"
+      :href="snsLink"
+      :class="snsClass"
+      class="bg-gray-500"
+    >
+      <!-- 動的にアイコンの指定が[]だとできない泣 -->
+      <span class="mr-1">
+        <font-awesome-icon
+          v-if="type === 'twitter'"
+          :icon="['fab', 'twitter']"
+        />
+        <font-awesome-icon v-if="type === 'line'" :icon="['fab', 'line']" />
+        <font-awesome-icon
+          v-if="type === 'facebook'"
+          :icon="['fab', 'facebook']"
+        />
+        <font-awesome-icon v-if="!type" icon="link" />
+      </span>
+      <slot />
+    </a>
+    <a
+      v-if="getUser && !type"
+      href="#"
+      :class="snsClass"
+      class="bg-gray-500"
+      @click.prevent="copyUrl"
+    >
+      <font-awesome-icon icon="link" />
+      <slot />
+    </a>
+  </span>
 </template>
 
 <script>
@@ -45,7 +66,23 @@ export default {
       if (this.type === 'twitter') {
         return `https://twitter.com/share?text=ツイリンクでリンク集を作成したよ！&url=${this.getUrl}&related=@mikeanakida&hashtags=TwiLink,ツイリンク`
       }
-      return `https://twitter.com/share?text=ツイリンクでリンク集を作成したよ！&url=${this.getUrl}&related=@mikeanakida&hashtags=TwiLink,ツイリンク`
+
+      if (this.type === 'facebook') {
+        return `http://www.facebook.com/share.php?u=${this.getUrl}`
+      }
+      return this.getUrl
+    },
+  },
+
+  methods: {
+    copyUrl() {
+      const dummy = document.createElement('textarea')
+      document.body.append(dummy)
+      dummy.value = this.getUrl
+      dummy.select()
+      document.execCommand('copy')
+      document.body.removeChild(dummy)
+      alert('URLをコピーしました！')
     },
   },
 }
