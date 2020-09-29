@@ -1,14 +1,20 @@
 <template>
   <footer class="l-footer pt-8 pb-16">
     <section class="container px-5 mx-auto text-center">
-      <h2 class="font-bold text-xl">About</h2>
-      <div class="mt-4 flex space-x-2 justify-center">
-        <nuxt-link to="/terms">利用規約</nuxt-link>
-        <span>/</span>
-        <a href="#">公式ツイッター</a>
-      </div>
+      <h2 class="font-bold text-xl">メニュー</h2>
+      <ul class="mt-4 mx-auto space-y-3 text-left list-disc pl-32">
+        <li>
+          <UiLink to="/legal"> 利用規約 </UiLink>
+        </li>
+        <li>
+          <UiLink button @clickEvent="login"> ログイン </UiLink>
+        </li>
+        <li>
+          <UiLink href="https://twitter.com/twilink"> 公式Twitter </UiLink>
+        </li>
+      </ul>
       <section>
-        <h3 class="mt-8 font-bold">開発者</h3>
+        <h3 class="mt-8 font-bold text-xl">作者</h3>
         <div class="flex flex-col justify-center items-center mt-4 space-y-3">
           <div class="mt-2">
             <a
@@ -21,7 +27,7 @@
                   class="rounded-full mx-auto border bg-white w-12"
                   alt="作者のアイコン"
                 />
-                <span> manaki </span>
+                <span class="text-sm"> manaki </span>
               </div>
 
               <div class="l-footer__messages relative">
@@ -44,12 +50,7 @@
                   alt="作者のアイコン"
                   style="min-width: 48px"
                 />
-                <span
-                  href="https://twitter.com/mikeanakida"
-                  class="text-sm text-left"
-                >
-                  146
-                </span>
+                <span class="text-sm"> 146 </span>
               </div>
               <div class="l-footer__messages relative">
                 <p class="text-sm l-footer__message text-left ml-2">
@@ -68,7 +69,12 @@
 </template>
 
 <script>
-export default {}
+import { userMapper } from '@/store/user'
+export default {
+  methods: {
+    ...userMapper.mapActions(['login']),
+  },
+}
 </script>
 
 <style scoped lang="scss">
