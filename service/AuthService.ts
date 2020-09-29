@@ -14,6 +14,10 @@ export class AuthService {
     this.$fb.auth().signOut()
   }
 
+  async deleteAccount(uid:string): Promise<void> {
+    await this.$fb.firestore().collection('users').doc(uid).delete()
+  }
+
   async createNewAccount(user: AuthUser) {
     const doc = await this.$fb.firestore().collection('users').doc(user.user.uid).get()
     if(doc.exists) {
