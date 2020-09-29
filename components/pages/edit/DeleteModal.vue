@@ -1,7 +1,7 @@
 <template>
   <UiModalSmall>
     <section class="bg-white rounded-lg w-full c-deleteModal">
-      <h2 class="font-bold text-xl">URLを削除しますか？</h2>
+      <h2 class="font-bold text-xl">{{ target }}を削除しますか？</h2>
       <p class="block mt-3">
         この操作は取り消せません。<br />
         削除してもよろしいですか？
@@ -16,7 +16,14 @@
   </UiModalSmall>
 </template>
 <script>
-export default {}
+export default {
+  props: {
+    target: {
+      type: String,
+      default: 'URL',
+    },
+  },
+}
 </script>
 
 <style scoped>

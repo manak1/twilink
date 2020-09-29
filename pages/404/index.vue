@@ -8,7 +8,7 @@
         class="w-48 mx-auto mt-3"
       />
     </nuxt-link>
-    <p class="font-bold mt-4">ペンギン君の手を借りて元の場所に戻りましょう！</p>
+    <p class="font-bold mt-8">ペンギン君の手を借りて元の場所に戻りましょう！</p>
   </section>
 </template>
 
