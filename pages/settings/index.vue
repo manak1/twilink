@@ -18,7 +18,12 @@
       enter-active-class="animated c-fade__in"
       leave-active-class="animated c-fade__out"
     >
-      <DeleteModal v-if="modal" target="アカウント" @cancel="modal = false" />
+      <DeleteModal
+        v-if="modal"
+        target="アカウント"
+        @delete="deleteAccount"
+        @cancel="modal = false"
+      />
     </transition>
   </div>
 </template>
