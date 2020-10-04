@@ -1,6 +1,6 @@
 <template>
   <section class="px-5 text-center pt-4 pb-20">
-    <h2>リンク集をシェアしよう。</h2>
+    <h2 class="font-bold">リンク集をシェアしよう。</h2>
     <ul class="space-y-4 mt-4">
       <li v-for="(sns, index) in socials" :key="index">
         <UiShareButton :type="sns.type">
@@ -19,6 +19,10 @@ export default {
     return {
       socials: [
         {
+          type: '',
+          text: 'URLをコピー',
+        },
+        {
           type: 'twitter',
           text: 'ページをツイート',
         },
@@ -29,10 +33,6 @@ export default {
         {
           type: 'line',
           text: 'ページを共有',
-        },
-        {
-          type: '',
-          text: 'URLをコピー',
         },
       ],
     }
