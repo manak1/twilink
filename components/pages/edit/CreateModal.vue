@@ -71,29 +71,6 @@
             />
           </div>
           <hr />
-          <!-- <ul v-if="dummyData" class="flex">
-            <li class="pt-2">
-              <a
-                href="#"
-                @click.prevent="
-                  dummyData.options.visible = !dummyData.options.visible
-                "
-              >
-                <font-awesome-icon
-                  v-if="dummyData.options.visible"
-                  class="c-icon"
-                  :style="applyColor"
-                  icon="eye"
-                />
-                <font-awesome-icon
-                  v-else
-                  class="c-icon"
-                  :style="applyColor"
-                  icon="eye-slash"
-                />
-              </a>
-            </li>
-          </ul> -->
         </div>
       </form>
     </div>
