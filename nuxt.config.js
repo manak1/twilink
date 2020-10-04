@@ -61,7 +61,14 @@ export default {
       },
       { name: 'twitter:card', content: 'summary_large_image' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'apple-touch-icon',
+        sizes: '120x120',
+        href: '/appleTouchIcon.png',
+      },
+    ],
   },
   /*
    ** Global CSS
@@ -97,10 +104,16 @@ export default {
   googleAnalytics: {
     id: 'UA-147115071-1',
   },
+  markdownit: {
+    preset: 'default',
+    linkify: true,
+    breaks: true,
+    use: ['markdown-it-div', 'markdown-it-attrs'],
+  },
   /*
    ** Nuxt.js modules
    */
-  modules: ['nuxt-fontawesome'],
+  modules: ['nuxt-fontawesome', '@nuxtjs/markdownit'],
   fontawesome: {
     imports: [
       {
@@ -123,6 +136,9 @@ export default {
     appId: process.env.appId,
     measurementId: process.env.measurementId,
     apiURl: process.env.apiUrl,
+  },
+  generate: {
+    fallback: true,
   },
   /*
    ** Build configuration
