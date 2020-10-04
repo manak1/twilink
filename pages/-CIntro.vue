@@ -14,11 +14,16 @@
       TwiLinkはリンクを沢山貼るとごちゃごちゃしがちなTwitterプロフィールをシンプルにリンク1つにまとめることができるサービスです。
     </p>
     <div class="text-center mt-8">
-      <ui-login-button text="リンクページを作る" />
+      <ui-login-button text="リンクページを作る" @click-event="login" />
     </div>
   </section>
 </template>
 
 <script>
-export default {}
+import { userMapper } from '@/store/user'
+export default {
+  methods: {
+    ...userMapper.mapActions(['login']),
+  },
+}
 </script>

@@ -9,7 +9,7 @@
           alt="羊君"
         />
       </figure>
-      <ui-login-button text="リンクページを作る" />
+      <ui-login-button text="リンクページを作る" @click-event="login" />
       <p class="mt-3 text-xs text-gray-800 opacity-75">
         あなただけのリンクページをつくろう！
       </p>
@@ -29,7 +29,12 @@
 </template>
 
 <script>
-export default {}
+import { userMapper } from '@/store/user'
+export default {
+  methods: {
+    ...userMapper.mapActions(['login']),
+  },
+}
 </script>
 
 <style lang="scss" scoped>
