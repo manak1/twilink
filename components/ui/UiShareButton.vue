@@ -70,6 +70,10 @@ export default {
       if (this.type === 'facebook') {
         return `http://www.facebook.com/share.php?u=${this.getUrl}`
       }
+
+      if (this.type === 'line') {
+        return `https://social-plugins.line.me/lineit/share?url=${this.getUrl}`
+      }
       return this.getUrl
     },
   },
