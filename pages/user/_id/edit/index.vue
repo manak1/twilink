@@ -48,6 +48,7 @@
         @addButtonData="addButtonData"
       />
     </transition>
+    <CNoUrl v-if="isUrlEmpty" />
   </div>
 </template>
 
@@ -56,14 +57,16 @@ import { userMapper } from '@/store/user'
 import { loadedMapper } from '@/store/loaded'
 import { AuthService } from '@/service/AuthService'
 import draggable from 'vuedraggable'
+import CNoUrl from '@/pages/user/_id/edit/-CNoUrl'
 export default {
   layout: 'project',
   components: {
     draggable,
+    CNoUrl,
   },
   data() {
     return {
-      ghostUrls: null,
+      ghostUrls: [],
       edit: false,
       deleteModal: false,
       mode: 'create',
@@ -72,15 +75,18 @@ export default {
         url: '',
         text: '',
         id: this.generateRandomId(),
-        options: {
-          visible: true,
-        },
       },
     }
   },
   computed: {
     ...userMapper.mapGetters(['getUser']),
     ...loadedMapper.mapGetters(['isLoaded']),
+    isUrlEmpty() {
+      if (this.ghostUrls.length <= 0) {
+        return true
+      }
+      return false
+    },
   },
   watch: {
     isLoaded() {
