@@ -54,12 +54,14 @@ export default {
   },
   methods: {
     ...userMapper.mapActions(['logout']),
+    ...userMapper.mapMutations(['resetUser']),
     openModal() {
       this.modal = true
     },
     async deleteAccount() {
       const authInstance = new AuthService(this.$fb)
       await authInstance.deleteAccount(this.getUser.uid)
+      this.resetUser
       this.$router.push('/')
     },
   },
