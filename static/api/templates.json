@@ -3,27 +3,38 @@
     {
       "title": "シンプル",
       "class": "l-simple",
-      "applyColor": true
+      "applyColor": true,
+      "previewClass": false
     },
     {
       "title": "ダーク",
       "class": "l-dark",
-      "applyColor": false
+      "applyColor": false,
+      "previewClass": false
     },
     {
       "title": "ラベル風",
       "class": "l-label",
-      "applyColor": true
+      "applyColor": true,
+      "previewClass": false
     },
     {
       "title": "インスタ風",
       "class": "l-insta",
-      "applyColor": false
+      "applyColor": false,
+      "previewClass": false
     },
     {
       "title": "ニューモ",
       "class": "l-neumor",
-      "applyColor": false
+      "applyColor": false,
+      "previewClass": false
+    },
+    {
+      "title": "夢のひととき",
+      "class": "l-dream",
+      "applyColor": true,
+      "previewClass": true
     }
   ]
 }

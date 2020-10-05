@@ -11,8 +11,8 @@
       >
         <label :for="`template${index}`">
           <article
-            class="flex flex-col h-32 px-2 pt-4"
-            :class="template.class"
+            class="flex flex-col h-32 px-2 pt-4 overflow-hidden"
+            :class="hasPreviewClass(template)"
             style="height: 217px"
             :style="applyBackgroundColor(template.applyColor)"
           >
@@ -108,6 +108,13 @@ export default {
       return {
         'background-color': colorList.join(','),
       }
+    },
+
+    hasPreviewClass(template) {
+      if (template.previewClass) {
+        return `${template.class}Preview`
+      }
+      return template.class
     },
   },
 }

@@ -62,9 +62,9 @@ $white: #fff;
     display: block;
     text-decoration: none;
     background: #f7f7f7;
-    border-left: solid 20px #ff7c5c;
+    border-left: solid 15px #ff7c5c;
     color: #ff7c5c;
-    padding: 25px 0;
+    padding: 20px 0;
     font-weight: bold;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
     &:active {
@@ -85,7 +85,6 @@ $white: #fff;
   .c-title {
     color: #283a46;
     font-weight: bold;
-    width: 50%;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -114,3 +113,71 @@ $white: #fff;
     box-shadow: -3px -3px 5px rgba(255, 255, 255, 0.8), 3px 3px 5px rgba(0, 0, 0, 0.2);
   }
 }
+
+
+.l-dream {
+  position:relative;
+  &:after {
+    content:"";
+    position:fixed;
+    right: 30px; 
+    bottom:10px;
+    background-image:url("/images/templates/panda.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 80px;
+    height: 80px;
+    display: block;
+  }
+    .c-title {
+      color: $white;
+    }
+  
+    .c-button {
+      display: block;
+      color: $white;
+      border: 1px solid #fff;
+      background-color: $white;
+      transition: 0.3s all;
+      &:hover {
+        transition: 0.3s all;
+        background-color: #fff;
+        color: black;
+      }
+  }
+}
+
+
+.l-dreamPreview {
+  position:relative;
+  &:after {
+    content:"";
+    position:absolute;
+    right: 10%; 
+    bottom: -5%;
+    background-image:url("/images/templates/panda.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 20%;
+    height: 20%;
+    display: block;
+  }
+    .c-title {
+      color: $white;
+    }
+  
+    .c-button {
+      display: block;
+      color: $white;
+      border: 1px solid #fff;
+      background-color: $white;
+      transition: 0.3s all;
+      &:hover {
+        transition: 0.3s all;
+        background-color: #fff;
+        color: black;
+      }
+  }
+}
+
+

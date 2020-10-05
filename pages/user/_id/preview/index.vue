@@ -2,8 +2,8 @@
   <div
     v-if="getUser"
     class="px-5 pt-4"
-    :class="getUser.template"
-    style="min-height: 90vh"
+    :class="hasPreviewClass()"
+    style="min-height: 85vh"
     :style="applyBackgroundColor(applyColor)"
   >
     <img
@@ -11,7 +11,7 @@
       class="rounded-full h-24 mx-auto c-icon"
       :alt="`${getUser.name}のアイコン`"
     />
-    <h2 class="text-center c-title mt-2 text-white">@{{ getUser.name }}</h2>
+    <h2 class="text-center c-title mt-2 text-white">@{{ getUser.id }}</h2>
     <ul class="test-ui space-y-4 mt-4">
       <li v-for="(url, index) in getUser.urls" :key="index">
         <UiLinkButton :url-data="url" :style="applyBorderColor(applyColor)" />
@@ -28,6 +28,7 @@ export default {
     return {
       applyColor: false,
       templates: templates,
+      hasPreview: false,
     }
   },
   layout: 'project',
@@ -47,6 +48,7 @@ export default {
     })
     if (template.length >= 1) {
       this.applyColor = template[0].applyColor
+      this.hasPreview = template[0].previewClass
     }
   },
   methods: {
@@ -70,6 +72,13 @@ export default {
       return {
         'background-color': colorList.join(','),
       }
+    },
+
+    hasPreviewClass() {
+      if (this.hasPreview) {
+        return `${this.getUser.template}Preview`
+      }
+      return this.getUser.template
     },
   },
 }
