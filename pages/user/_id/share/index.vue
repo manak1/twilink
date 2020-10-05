@@ -19,12 +19,12 @@ export default {
     return {
       socials: [
         {
-          type: '',
-          text: 'URLをコピー',
-        },
-        {
           type: 'twitter',
           text: 'ページをツイート',
+        },
+        {
+          type: '',
+          text: 'URLをコピー',
         },
         {
           type: 'facebook',

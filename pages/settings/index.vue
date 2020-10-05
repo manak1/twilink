@@ -1,11 +1,15 @@
 <template>
-  <div v-if="getUser" class="container mx-auto text-center px-5 pt-4">
+  <div
+    v-if="getUser"
+    class="container mx-auto text-center px-5 pt-4 p-settings"
+  >
     <div>
       <img
         :src="getImage"
         class="h-24 mx-auto rounded-full bg-white border"
         :alt="`${getUser.name}のアイコン`"
       />
+      <p class="mt-2">{{ getUser.name }}</p>
       <hr class="mt-4" />
     </div>
     <div class="flex flex-col justify-center items-center space-y-8 mt-6">
@@ -61,7 +65,7 @@ export default {
     async deleteAccount() {
       const authInstance = new AuthService(this.$fb)
       await authInstance.deleteAccount(this.getUser.uid)
-      this.resetUser
+      this.resetUser()
       this.$router.push('/')
     },
   },
@@ -69,6 +73,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.p-settings {
+  min-height: 50vh;
+}
 .c-fade__in {
   -webkit-animation-name: fadein;
   animation-name: fadeIn;
