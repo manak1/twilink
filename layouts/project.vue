@@ -1,6 +1,8 @@
 <template>
-  <div v-if="getUser" class="mx-auto">
-    <div class="container mx-auto min-h-screen md:border overflow-hidden">
+  <div v-if="getUser" class="mx-auto bg-gray-100">
+    <div
+      class="bg-white container mx-auto min-h-screen md:border overflow-hidden"
+    >
       <l-header :user="getUser" />
       <l-switcher />
       <Nuxt />
