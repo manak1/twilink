@@ -30,12 +30,16 @@
       :templates="templates"
       @update="updateTemplateData"
     />
-    <aside>
-      <p>
+    <aside class="mt-4">
+      <p class="text-sm">
         テンプレートはまだまだ追加予定です！
         <br />
         アイディアがあれば
-        <a href="https://twitter.com/twilink_app" class="inline -mx-1">
+        <a
+          href="https://twitter.com/twilink_app"
+          class="inline -mx-1"
+          style="text-decoration: underline"
+        >
           こちら
         </a>
         まで！！
