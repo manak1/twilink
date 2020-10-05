@@ -68,6 +68,11 @@ export default {
         sizes: '120x120',
         href: '/appleTouchIcon.png',
       },
+      {
+        rel: 'apple-touch-icon',
+        sizes: '60x60',
+        href: '/appleTouchIcon60.png',
+      },
     ],
   },
   /*
