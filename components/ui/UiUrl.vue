@@ -62,8 +62,8 @@ export default {
   },
   computed: {
     trimText() {
-      if (this.urlData.text.length >= 20) {
-        return this.urlData.text.slice(0, 18) + '...'
+      if (this.urlData.text.length >= 19) {
+        return this.urlData.text.slice(0, 16) + '...'
       }
       return this.urlData.text
     },
