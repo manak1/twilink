@@ -118,7 +118,13 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['nuxt-fontawesome', '@nuxtjs/markdownit'],
+  modules: ['nuxt-fontawesome', '@nuxtjs/markdownit', '@nuxtjs/sitemap'],
+
+  sitemap: {
+    hostname: 'https://twilink.click',
+    gzip: true,
+    exclude: ['/user/**', '/settings'],
+  },
   fontawesome: {
     imports: [
       {
