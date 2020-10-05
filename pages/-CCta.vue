@@ -17,9 +17,9 @@
 
     <aside class="text-center mt-12">
       <p>↓ 実際のリンクページはこんな感じだよ！</p>
-      <nuxt-link to="/mikeanakida">
+      <nuxt-link to="/twilink_app">
         <img
-          src="@/assets/images/pages/intro/intro__example.png"
+          src="@/assets/images/pages/intro/intro__ogp.png"
           alt="manakiのリンク集"
           class="w-4/5 mx-auto mt-4 rounded-md"
         />
