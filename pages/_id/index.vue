@@ -113,7 +113,7 @@ export default {
   },
   head() {
     return {
-      title: `@${this.user.id}のリンク集 | TwiLink`,
+      title: `${this.user.name}のリンク集 | TwiLink`,
       meta: [
         {
           hid: 'description',
