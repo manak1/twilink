@@ -64,7 +64,9 @@ export default {
     },
     snsLink() {
       if (this.type === 'twitter') {
-        return `https://twitter.com/share?text=ツイリンクでリンク集を作成したよ！&url=${this.getUrl}&related=@mikeanakida&hashtags=TwiLink,ツイリンク`
+        return `https://twitter.com/intent/tweet?related=@mikeanakida&text=${encodeURIComponent(
+          `ツイリンクでリンク集を作成したよ!\r\n #TwiLink #ツイリンク `
+        )}${this.getUrl}`
       }
 
       if (this.type === 'facebook') {
