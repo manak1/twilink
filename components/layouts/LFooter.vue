@@ -10,7 +10,7 @@
           <UiLink button @clickEvent="login"> ログイン </UiLink>
         </li>
         <li>
-          <UiLink href="https://twitter.com/twilink"> 公式Twitter </UiLink>
+          <UiLink href="https://twitter.com/twilink_app"> 公式Twitter </UiLink>
         </li>
       </ul>
       <section>
