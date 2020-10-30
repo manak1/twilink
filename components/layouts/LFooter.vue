@@ -40,7 +40,7 @@
           </div>
           <div class="mt-2">
             <a
-              href="https://twitter.com/mikeanakida"
+              href="https://twitter.com/zyung_zyung"
               class="flex justify-between items-center block space-x-6"
             >
               <div class="text-center">
