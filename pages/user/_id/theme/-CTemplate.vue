@@ -33,7 +33,7 @@
                 style="padding: 2px"
                 :style="applyBorderColor(template.applyColor)"
               >
-                ボタン
+                <span> ボタン </span>
               </a>
             </div>
           </article>

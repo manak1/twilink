@@ -3,7 +3,7 @@
     v-if="getUser"
     class="px-5 pt-4"
     :class="hasPreviewClass()"
-    style="min-height: 85vh"
+    style="min-height: 90vh"
     :style="applyBackgroundColor(applyColor)"
   >
     <img

@@ -7,15 +7,15 @@
       "previewClass": false
     },
     {
-      "title": "ダーク",
-      "class": "l-dark",
-      "applyColor": false,
-      "previewClass": false
-    },
-    {
       "title": "ラベル風",
       "class": "l-label",
       "applyColor": true,
+      "previewClass": false
+    },
+    {
+      "title": "ダーク",
+      "class": "l-dark",
+      "applyColor": false,
       "previewClass": false
     },
     {
@@ -31,9 +31,9 @@
       "previewClass": false
     },
     {
-      "title": "夢のひととき",
-      "class": "l-dream",
-      "applyColor": true,
+      "title": "ダッシュ",
+      "class": "l-dash",
+      "applyColor": false,
       "previewClass": true
     }
   ]

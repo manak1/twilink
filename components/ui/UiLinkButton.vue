@@ -3,8 +3,11 @@
     :href="urlData.url"
     class="w-full block c-button text-center text-white py-4"
     target="_blank"
+    rel="nofollow"
   >
-    {{ urlData.text }}
+    <span>
+      {{ urlData.text }}
+    </span>
   </a>
 </template>
 
