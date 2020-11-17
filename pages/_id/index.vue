@@ -150,4 +150,9 @@ export default {
 
 <style lang="scss">
 @import '~/assets/scss/buttons';
+
+.c-icon {
+  max-width: 100px;
+  max-height: 100px;
+}
 </style>
