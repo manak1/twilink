@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="user"
-    class="container relative min-h-screen mx-auto text-center pt-4 px-5"
+    class="container relative min-h-screen mx-auto text-center pt-4 px-5 pb-32"
     :class="user.template"
     :style="applyBackgroundColor(applyColor)"
   >
