@@ -14,13 +14,13 @@ export class AuthService {
     this.$fb.auth().signOut()
   }
 
-  async deleteAccount(uid:string): Promise<void> {
+  async deleteAccount(uid: string): Promise<void> {
     await this.$fb.firestore().collection('users').doc(uid).delete()
   }
 
   async createNewAccount(user: AuthUser) {
     const doc = await this.$fb.firestore().collection('users').doc(user.user.uid).get()
-    if(doc.exists) {
+    if (doc.exists) {
       return doc.data()
     }
     else {
@@ -68,15 +68,21 @@ export class AuthService {
     })
   }
 
-  async updateColor(uid:string,color:string) {
-    await this.$fb.firestore().collection('users').doc(uid).update( {
-      "color":color
+  async updateColor(uid: string, color: string) {
+    await this.$fb.firestore().collection('users').doc(uid).update({
+      "color": color
     })
   }
 
-  async updateTemplate(uid:string,template:string) {
-    await this.$fb.firestore().collection('users').doc(uid).update( {
-      "template":template
+  async updateTemplate(uid: string, template: string) {
+    await this.$fb.firestore().collection('users').doc(uid).update({
+      "template": template
+    })
+  }
+
+  async updateIcon(uid: string, iconUrl: string) {
+    await this.$fb.firestore().collection('users').doc(uid).update({
+      'icon': iconUrl
     })
   }
 }

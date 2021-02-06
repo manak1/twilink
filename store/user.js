@@ -42,16 +42,26 @@ export const actions = {
   async relogin({ commit }) {
     this.$fb.auth().onAuthStateChanged(async (user) => {
       if (!user) {
-        console.log('user not found!!')
         return
       }
       const uid = user.uid
+      const iconUrl = user.providerData[0].photoURL
+
       const authInstance = new AuthService(this.$fb)
       const userData = await authInstance.getUser(uid)
+
       if (!userData) {
         return
       }
+
       userData.uid = uid
+
+      // userのツイッターアイコンが更新されていないか確認
+      if (userData.icon !== iconUrl) {
+        await authInstance.updateIcon(userData.uid, iconUrl)
+        userData.icon = iconUrl
+      }
+
       this.commit('loaded/updateLoaded')
       commit('setUser', userData)
     })
